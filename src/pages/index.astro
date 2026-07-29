@@ -1,20 +1,820 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>
-      3rd DrishtiDosham Malayalam Short Film Festival | Pazhassiraja Smaraka
-      Granthalayam | Muncipality of Mananthavady
-    </title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-  </body>
-</html>
+<BaseLayout>
+  <!-- HERO SECTION -->
+  <section
+    class="relative bg-[#FAFAFA] pt-24 pb-32 px-4 sm:px-6 lg:px-8 border-b border-stone-200 antialiased selection:bg-stone-900 selection:text-white overflow-hidden"
+  >
+    <!-- Subtle background grid/texture simulation -->
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none"
+    >
+    </div>
+
+    <div
+      class="relative max-w-5xl mx-auto flex flex-col items-center text-center z-10"
+    >
+      <!-- Elegant Official Presenters (Perfected Mobile Flexbox) -->
+      <div
+        class="flex flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-12 mb-10 sm:mb-12 w-full max-w-3xl border-b border-stone-300 pb-8 sm:pb-10"
+      >
+        <!-- Municipality Block -->
+        <div
+          class="flex flex-1 sm:flex-none flex-col sm:flex-row items-center justify-start sm:justify-end gap-3 sm:gap-5 text-center sm:text-right"
+        >
+          <div class="flex flex-col order-2 sm:order-1">
+            <span
+              class="text-[8px] sm:text-[10px] font-bold text-stone-500 uppercase tracking-[0.2em] mb-1 sm:mb-1.5"
+            >
+              Presented By
+            </span>
+            <span
+              class="text-[11px] sm:text-base font-semibold text-stone-800 leading-tight"
+            >
+              Pazhassi Raja<br class="hidden sm:block" /> Smaraka Granthalayam
+            </span>
+          </div>
+          <img
+            src="https://images.unsplash.com/photo-1551650975-87deedd944c3?auto=format&fit=crop&w=150&h=150&q=80"
+            alt="Municipality Logo"
+            class="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover grayscale opacity-80 border border-stone-300 p-0.5 sm:p-1 order-1 sm:order-2 mix-blend-multiply"
+          />
+        </div>
+
+        <!-- Mobile Vertical Line / Desktop Cross Divider -->
+        <div class="flex flex-col justify-center py-2 sm:py-0">
+          <div class="block sm:hidden w-px self-stretch bg-stone-300 mx-2">
+          </div>
+          <div
+            class="hidden sm:block text-stone-300 font-light text-xl flex-shrink-0"
+          >
+            ✕
+          </div>
+        </div>
+
+        <!-- Library Block -->
+        <div
+          class="flex flex-1 sm:flex-none flex-col sm:flex-row items-center justify-start gap-3 sm:gap-5 text-center sm:text-left"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&w=150&h=150&q=80"
+            alt="Library Logo"
+            class="w-12 h-12 sm:w-16 sm:h-16 rounded-full object-cover grayscale opacity-80 border border-stone-300 p-0.5 sm:p-1 order-1 mix-blend-multiply"
+          />
+          <div class="flex flex-col order-2">
+            <span
+              class="text-[8px] sm:text-[10px] font-bold text-stone-500 uppercase tracking-[0.2em] mb-1 sm:mb-1.5"
+            >
+              In Association With
+            </span>
+            <span
+              class="text-[11px] sm:text-base font-semibold text-stone-800 leading-tight"
+            >
+              Mananthavady<br class="hidden sm:block" /> Municipality
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Editorial Typography Layout -->
+      <div class="mb-4 flex items-center justify-center gap-4">
+        <span class="h-px w-8 bg-stone-400"></span>
+        <span
+          class="text-xs font-bold uppercase tracking-[0.3em] text-stone-600"
+          >Season 03</span
+        >
+        <span class="h-px w-8 bg-stone-400"></span>
+      </div>
+
+      <h1
+        class="text-5xl sm:text-7xl md:text-8xl font-black text-stone-900 tracking-tighter uppercase leading-[0.9] mb-6"
+      >
+        Drishti<span class="text-stone-500">Dosham</span>
+      </h1>
+
+      <!-- Using serif for the subtitle adds cinematic/literary prestige -->
+      <p class="text-2xl md:text-4xl font-serif italic text-stone-700 mb-10">
+        Malayalam Short Film Festival
+      </p>
+
+      <p
+        class="text-base md:text-lg text-stone-600 max-w-2xl mx-auto mb-14 leading-relaxed"
+      >
+        A joint cultural initiative to discover cinematic excellence, celebrate
+        regional storytelling, and elevate the independent filmmaking community
+        of Kerala.
+      </p>
+
+      <!-- Minimalist Data Grid -->
+      <div
+        class="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 mb-14"
+      >
+        <div class="flex flex-col items-center">
+          <span
+            class="text-xs font-bold uppercase tracking-[0.2em] text-stone-400 mb-2"
+            >Date</span
+          >
+          <span class="text-xl md:text-2xl font-medium text-stone-900"
+            >20 Nov 2026</span
+          >
+        </div>
+
+        <div class="hidden sm:block w-px h-12 bg-stone-300"></div>
+
+        <div class="flex flex-col items-center">
+          <span
+            class="text-xs font-bold uppercase tracking-[0.2em] text-stone-400 mb-2"
+            >Location</span
+          >
+          <span class="text-xl md:text-2xl font-medium text-stone-900"
+            >Mananthavady</span
+          >
+        </div>
+      </div>
+
+      <!-- Refined Action Buttons -->
+      <div
+        class="flex flex-col sm:flex-row justify-center gap-5 w-full sm:w-auto"
+      >
+        <a
+          href="/register"
+          class="inline-flex justify-center items-center px-10 py-4 bg-stone-900 text-white text-sm font-bold uppercase tracking-widest rounded-sm hover:bg-stone-800 hover:-translate-y-0.5 shadow-lg shadow-stone-900/20 hover:shadow-xl hover:shadow-stone-900/30 transition-all duration-300 focus:ring-2 focus:ring-offset-2 focus:ring-stone-900"
+        >
+          Submit Your Film
+        </a>
+        <a
+          href="/guidelines"
+          class="inline-flex justify-center items-center px-10 py-4 bg-transparent text-stone-900 text-sm font-bold uppercase tracking-widest rounded-sm border border-stone-300 hover:border-stone-900 hover:-translate-y-0.5 transition-all duration-300"
+        >
+          Read Guidelines
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEASON 02 ARCHIVE & LAUREATES SECTION -->
+  <section
+    class="bg-white py-24 md:py-32 px-4 sm:px-6 lg:px-8 border-b border-stone-200 antialiased selection:bg-stone-900 selection:text-white"
+  >
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div
+        class="mb-20 flex flex-col md:flex-row md:items-end justify-between gap-8 text-center md:text-left"
+      >
+        <div>
+          <div
+            class="mb-5 flex items-center justify-center md:justify-start gap-4"
+          >
+            <span class="h-px w-8 bg-stone-300"></span>
+            <span
+              class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-500"
+              >From The Archive</span
+            >
+          </div>
+          <h2
+            class="text-4xl sm:text-5xl md:text-6xl font-black text-stone-900 tracking-tighter uppercase leading-none"
+          >
+            Season 02 <span class="text-stone-400">Laureates</span>
+          </h2>
+        </div>
+        <p
+          class="text-lg md:text-xl font-serif italic text-stone-500 max-w-sm leading-relaxed"
+        >
+          The visionary storytelling and cinematic frames that defined last
+          year's festival.
+        </p>
+      </div>
+
+      <!-- Top 3 Winners (Editorial Layout with Stills & Captions) -->
+      <div
+        class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8 border-b border-stone-200 pb-24 mb-24"
+      >
+        <!-- First Place -->
+        <figure class="flex flex-col group cursor-pointer">
+          <div
+            class="relative overflow-hidden aspect-[4/3] bg-stone-100 mb-4 rounded-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1518527989017-5a305372338c?auto=format&fit=crop&w=800&q=80"
+              alt="A moody, rain-soaked street at night representing Oru Rathriyude Koodasha"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
+            />
+          </div>
+          <figcaption
+            class="flex justify-between items-end border-b border-stone-200 pb-3 mb-6"
+          >
+            <span
+              class="text-[9px] sm:text-[10px] font-bold text-stone-500 uppercase tracking-widest"
+            >
+              Fig 1. — Production Still
+            </span>
+            <span
+              class="text-[9px] sm:text-[10px] font-bold text-stone-400 uppercase tracking-widest"
+            >
+              DP: Mahesh V.
+            </span>
+          </figcaption>
+
+          <div class="flex flex-col items-start">
+            <span
+              class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-900 mb-4 bg-stone-100 px-3 py-1 rounded-sm"
+            >
+              Best Short Film
+            </span>
+            <h3
+              class="text-3xl font-serif italic text-stone-900 mb-1 group-hover:text-stone-500 transition-colors duration-300"
+            >
+              Oru Rathriyude Koodasha
+            </h3>
+            <p
+              class="text-xs font-bold uppercase tracking-widest text-stone-500 mb-5"
+            >
+              Dir. Akhil Raj
+            </p>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              A gripping, atmospheric exploration of guilt and redemption set
+              against the backdrop of a stormy night in rural Kerala.
+              Unanimously praised for its stark cinematography.
+            </p>
+          </div>
+        </figure>
+
+        <!-- Second Place -->
+        <figure class="flex flex-col group cursor-pointer lg:mt-12">
+          <div
+            class="relative overflow-hidden aspect-[4/3] bg-stone-100 mb-4 rounded-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1590422750106-90f70a2a4b88?auto=format&fit=crop&w=800&q=80"
+              alt="A solitary fishing boat on a moody coastal sunset representing Theeram"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
+            />
+          </div>
+          <figcaption
+            class="flex justify-between items-end border-b border-stone-200 pb-3 mb-6"
+          >
+            <span
+              class="text-[9px] sm:text-[10px] font-bold text-stone-500 uppercase tracking-widest"
+            >
+              Fig 2. — Production Still
+            </span>
+            <span
+              class="text-[9px] sm:text-[10px] font-bold text-stone-400 uppercase tracking-widest"
+            >
+              DP: Arun Kumar
+            </span>
+          </figcaption>
+
+          <div class="flex flex-col items-start">
+            <span
+              class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-900 mb-4 bg-stone-100 px-3 py-1 rounded-sm"
+            >
+              Second Best Film
+            </span>
+            <h3
+              class="text-3xl font-serif italic text-stone-900 mb-1 group-hover:text-stone-500 transition-colors duration-300"
+            >
+              Theeram
+            </h3>
+            <p
+              class="text-xs font-bold uppercase tracking-widest text-stone-500 mb-5"
+            >
+              Dir. Maya Menon
+            </p>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              An intimate and devastating portrayal of coastal life. The jury
+              highlighted its raw, unscripted performances and deeply humanist
+              storytelling.
+            </p>
+          </div>
+        </figure>
+
+        <!-- Third Place / Special Jury -->
+        <figure class="flex flex-col group cursor-pointer lg:mt-24">
+          <div
+            class="relative overflow-hidden aspect-[4/3] bg-stone-100 mb-4 rounded-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1534067783941-51c9c23ecefd?auto=format&fit=crop&w=800&q=80"
+              alt="Artistic shadows and silhouettes representing Nizhalattam"
+              loading="lazy"
+              decoding="async"
+              class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
+            />
+          </div>
+          <figcaption
+            class="flex justify-between items-end border-b border-stone-200 pb-3 mb-6"
+          >
+            <span
+              class="text-[9px] sm:text-[10px] font-bold text-stone-500 uppercase tracking-widest"
+            >
+              Fig 3. — Production Still
+            </span>
+            <span
+              class="text-[9px] sm:text-[10px] font-bold text-stone-400 uppercase tracking-widest"
+            >
+              DP: Sarah John
+            </span>
+          </figcaption>
+
+          <div class="flex flex-col items-start">
+            <span
+              class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-900 mb-4 bg-stone-100 px-3 py-1 rounded-sm"
+            >
+              Special Jury Award
+            </span>
+            <h3
+              class="text-3xl font-serif italic text-stone-900 mb-1 group-hover:text-stone-500 transition-colors duration-300"
+            >
+              Nizhalattam
+            </h3>
+            <p
+              class="text-xs font-bold uppercase tracking-widest text-stone-500 mb-5"
+            >
+              Dir. Vishnu Prasad
+            </p>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Recognized for its bold narrative structure, this surrealist drama
+              pushed the boundaries of the Malayalam short format through
+              innovative sound design.
+            </p>
+          </div>
+        </figure>
+      </div>
+
+      <!-- Official Selections Gallery -->
+      <div class="mb-12 flex items-center justify-between">
+        <h3
+          class="text-2xl font-black text-stone-900 tracking-tighter uppercase"
+        >
+          Official <span class="text-stone-400">Selections</span>
+        </h3>
+        <span class="hidden sm:block h-px flex-grow bg-stone-200 ml-8"></span>
+      </div>
+
+      <!-- Even 3-Column Grid (6 Items) -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12"
+      >
+        <!-- Selection 1 -->
+        <figure class="group cursor-pointer">
+          <div
+            class="relative overflow-hidden aspect-video bg-stone-100 mb-3 rounded-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=600&q=80"
+              alt="Clapperboard on a dusty set"
+              class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption class="flex flex-col">
+            <span
+              class="text-lg font-serif italic text-stone-900 group-hover:text-stone-500 transition-colors duration-300"
+              >Veyil Marangal</span
+            >
+            <span
+              class="text-[10px] font-bold uppercase tracking-widest text-stone-500"
+              >Dir. Rahul K. — Nominated: Best Screenplay</span
+            >
+          </figcaption>
+        </figure>
+
+        <!-- Selection 2 -->
+        <figure class="group cursor-pointer">
+          <div
+            class="relative overflow-hidden aspect-video bg-stone-100 mb-3 rounded-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?auto=format&fit=crop&w=600&q=80"
+              alt="Vintage camera lens detail"
+              class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption class="flex flex-col">
+            <span
+              class="text-lg font-serif italic text-stone-900 group-hover:text-stone-500 transition-colors duration-300"
+              >Pazhaya Mugam</span
+            >
+            <span
+              class="text-[10px] font-bold uppercase tracking-widest text-stone-500"
+              >Dir. Anjali Menon — Official Selection</span
+            >
+          </figcaption>
+        </figure>
+
+        <!-- Selection 3 -->
+        <figure class="group cursor-pointer">
+          <div
+            class="relative overflow-hidden aspect-video bg-stone-100 mb-3 rounded-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1522869635900-68d7120a273f?auto=format&fit=crop&w=600&q=80"
+              alt="Macro shot of an eye reflecting a screen"
+              class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption class="flex flex-col">
+            <span
+              class="text-lg font-serif italic text-stone-900 group-hover:text-stone-500 transition-colors duration-300"
+              >Nottam</span
+            >
+            <span
+              class="text-[10px] font-bold uppercase tracking-widest text-stone-500"
+              >Dir. Sreejith D. — Best Editing</span
+            >
+          </figcaption>
+        </figure>
+
+        <!-- Selection 4 -->
+        <figure class="group cursor-pointer">
+          <div
+            class="relative overflow-hidden aspect-video bg-stone-100 mb-3 rounded-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1574267432553-4b4628c6e255?auto=format&fit=crop&w=600&q=80"
+              alt="Dramatic lighting inside an empty room"
+              class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption class="flex flex-col">
+            <span
+              class="text-lg font-serif italic text-stone-900 group-hover:text-stone-500 transition-colors duration-300"
+              >Irul</span
+            >
+            <span
+              class="text-[10px] font-bold uppercase tracking-widest text-stone-500"
+              >Dir. Kiran Kumar — Nominated: Cinematography</span
+            >
+          </figcaption>
+        </figure>
+
+        <!-- Selection 5 -->
+        <figure class="group cursor-pointer">
+          <div
+            class="relative overflow-hidden aspect-video bg-stone-100 mb-3 rounded-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=800&q=80"
+              alt="Spools of film strips laid out"
+              class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption class="flex flex-col">
+            <span
+              class="text-lg font-serif italic text-stone-900 group-hover:text-stone-500 transition-colors duration-300"
+              >Smrithi (Documentary Short)</span
+            >
+            <span
+              class="text-[10px] font-bold uppercase tracking-widest text-stone-500"
+              >Dir. Meera S. — Best Non-Fiction Film</span
+            >
+          </figcaption>
+        </figure>
+
+        <!-- Selection 6 -->
+        <figure class="group cursor-pointer">
+          <div
+            class="relative overflow-hidden aspect-video bg-stone-100 mb-3 rounded-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?auto=format&fit=crop&w=800&q=80"
+              alt="Empty vintage cinema seats"
+              class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 ease-out"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <figcaption class="flex flex-col">
+            <span
+              class="text-lg font-serif italic text-stone-900 group-hover:text-stone-500 transition-colors duration-300"
+              >Kaalam</span
+            >
+            <span
+              class="text-[10px] font-bold uppercase tracking-widest text-stone-500"
+              >Dir. Arun K. — Official Selection</span
+            >
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEASON 02 AWARDS GALA & CEREMONY SECTION -->
+  <section
+    class="bg-stone-950 py-24 md:py-32 px-4 sm:px-6 lg:px-8 border-t border-stone-800 antialiased selection:bg-white selection:text-stone-900"
+  >
+    <div class="max-w-7xl mx-auto">
+      <!-- Event Narrative / Header -->
+      <div class="mb-20 flex flex-col lg:flex-row gap-12 lg:gap-24">
+        <div class="lg:w-1/2">
+          <div class="mb-5 flex items-center gap-4">
+            <span class="h-px w-8 bg-stone-700"></span>
+            <span
+              class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-400"
+              >The Ceremony</span
+            >
+          </div>
+          <h2
+            class="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-6"
+          >
+            Season 02 <br />
+            <span class="text-stone-600">Awards Gala</span>
+          </h2>
+        </div>
+
+        <div class="lg:w-1/2 flex flex-col justify-end">
+          <p
+            class="text-lg md:text-xl font-serif italic text-stone-300 mb-6 leading-relaxed"
+          >
+            "A celebration of light, shadow, and the relentless spirit of
+            independent Malayalam cinema."
+          </p>
+          <p class="text-sm text-stone-400 leading-relaxed max-w-lg">
+            Hosted at the historic Mananthavady Municipal Auditorium, the Season
+            02 finale brought together over 500 filmmakers, critics, and
+            cinephiles. The evening featured live screenings of the shortlisted
+            films, followed by an intimate panel discussion with the jury and
+            the presentation of the Laureate trophies.
+          </p>
+        </div>
+      </div>
+
+      <!-- Staggered Editorial Gallery -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 auto-rows-[minmax(250px,auto)]"
+      >
+        <!-- Large Featured Image (Screening) -->
+        <figure class="group md:col-span-8 md:row-span-2 flex flex-col">
+          <div
+            class="relative overflow-hidden w-full h-full min-h-[400px] bg-stone-900 mb-4"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2ea68?auto=format&fit=crop&w=1200&q=80"
+              alt="Audience silhouetted against a glowing cinema screen"
+              loading="lazy"
+              class="absolute inset-0 w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
+            />
+          </div>
+          <figcaption
+            class="flex justify-between items-start border-b border-stone-800 pb-3"
+          >
+            <div>
+              <span class="block text-sm font-serif italic text-stone-200 mb-1"
+                >The Final Screening</span
+              >
+              <span
+                class="block text-[10px] font-bold uppercase tracking-widest text-stone-500"
+                >Auditorium, 7:30 PM</span
+              >
+            </div>
+            <span
+              class="text-[9px] font-bold text-stone-600 uppercase tracking-[0.2em]"
+              >01</span
+            >
+          </figcaption>
+        </figure>
+
+        <!-- Portrait Image (The Award) -->
+        <figure
+          class="group md:col-span-4 md:row-span-2 flex flex-col lg:-mt-16"
+        >
+          <div
+            class="relative overflow-hidden w-full h-full min-h-[450px] bg-stone-900 mb-4"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1585647347384-25920a0bdd08?auto=format&fit=crop&w=600&q=80"
+              alt="The official DrishtiDosham Laureate trophy"
+              loading="lazy"
+              class="absolute inset-0 w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
+            />
+          </div>
+          <figcaption
+            class="flex justify-between items-start border-b border-stone-800 pb-3"
+          >
+            <div>
+              <span class="block text-sm font-serif italic text-stone-200 mb-1"
+                >The Laureate</span
+              >
+              <span
+                class="block text-[10px] font-bold uppercase tracking-widest text-stone-500"
+                >Custom cast bronze trophy</span
+              >
+            </div>
+            <span
+              class="text-[9px] font-bold text-stone-600 uppercase tracking-[0.2em]"
+              >02</span
+            >
+          </figcaption>
+        </figure>
+
+        <!-- Medium Image (Applause) -->
+        <figure class="group md:col-span-5 flex flex-col">
+          <div class="relative overflow-hidden aspect-[4/3] bg-stone-900 mb-4">
+            <img
+              src="https://images.unsplash.com/photo-1505686994773-19a803f2956f?auto=format&fit=crop&w=800&q=80"
+              alt="Audience applauding the filmmakers"
+              loading="lazy"
+              class="absolute inset-0 w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
+            />
+          </div>
+          <figcaption
+            class="flex justify-between items-start border-b border-stone-800 pb-3"
+          >
+            <div>
+              <span class="block text-sm font-serif italic text-stone-200 mb-1"
+                >Standing Ovation</span
+              >
+              <span
+                class="block text-[10px] font-bold uppercase tracking-widest text-stone-500"
+                >Post-screening reaction</span
+              >
+            </div>
+            <span
+              class="text-[9px] font-bold text-stone-600 uppercase tracking-[0.2em]"
+              >03</span
+            >
+          </figcaption>
+        </figure>
+
+        <!-- Medium Image (Stage / Director speaking) -->
+        <figure class="group md:col-span-7 flex flex-col">
+          <div class="relative overflow-hidden aspect-[16/9] bg-stone-900 mb-4">
+            <img
+              src="https://images.unsplash.com/photo-1475721028070-2051152a420b?auto=format&fit=crop&w=1000&q=80"
+              alt="Director speaking on stage with microphone"
+              loading="lazy"
+              class="absolute inset-0 w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
+            />
+          </div>
+          <figcaption
+            class="flex justify-between items-start border-b border-stone-800 pb-3"
+          >
+            <div>
+              <span class="block text-sm font-serif italic text-stone-200 mb-1"
+                >Jury & Directors Panel</span
+              >
+              <span
+                class="block text-[10px] font-bold uppercase tracking-widest text-stone-500"
+                >Q&A session with the Laureates</span
+              >
+            </div>
+            <span
+              class="text-[9px] font-bold text-stone-600 uppercase tracking-[0.2em]"
+              >04</span
+            >
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+  <!-- OFFICIAL SPONSORS & PATRONS SECTION -->
+  <section
+    class="bg-[#FAFAFA] py-24 md:py-32 px-4 sm:px-6 lg:px-8 border-t border-stone-200 antialiased selection:bg-stone-900 selection:text-white"
+  >
+    <div class="max-w-7xl mx-auto">
+      <!-- Section Header -->
+      <div class="mb-16 md:mb-24 flex flex-col items-center text-center">
+        <div class="mb-5 flex items-center gap-4">
+          <span class="h-px w-8 bg-stone-300"></span>
+          <span
+            class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-500"
+            >Industry Support</span
+          >
+          <span class="h-px w-8 bg-stone-300"></span>
+        </div>
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl font-black text-stone-900 tracking-tighter uppercase leading-none mb-6"
+        >
+          Official <span class="text-stone-400">Patrons</span>
+        </h2>
+        <p
+          class="text-sm md:text-base text-stone-500 max-w-2xl leading-relaxed"
+        >
+          The third season of DrishtiDosham is made possible through the
+          generous support and cultural commitment of our visionary partners.
+        </p>
+      </div>
+
+      <!-- 
+        Premium Lattice Grid 
+        Using precise borders (border-t, border-l on the container, border-b, border-r on items) 
+        creates a high-end architectural wireframe look used by luxury brands.
+      -->
+      <div
+        class="grid grid-cols-2 md:grid-cols-4 border-t border-l border-stone-200 bg-[#FAFAFA]"
+      >
+        <!-- Sponsor 1 -->
+        <div
+          class="group relative flex items-center justify-center p-8 md:p-12 h-32 md:h-48 border-b border-r border-stone-200 hover:bg-white transition-colors duration-500"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?auto=format&fit=crop&w=400&q=80"
+            alt="Abstract Brand Logo 1"
+            loading="lazy"
+            class="max-h-12 md:max-h-16 w-auto object-contain grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out"
+          />
+        </div>
+
+        <!-- Sponsor 2 -->
+        <div
+          class="group relative flex items-center justify-center p-8 md:p-12 h-32 md:h-48 border-b border-r border-stone-200 hover:bg-white transition-colors duration-500"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80"
+            alt="Abstract Brand Logo 2"
+            loading="lazy"
+            class="max-h-12 md:max-h-16 w-auto object-contain grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out"
+          />
+        </div>
+
+        <!-- Sponsor 3 -->
+        <div
+          class="group relative flex items-center justify-center p-8 md:p-12 h-32 md:h-48 border-b border-r border-stone-200 hover:bg-white transition-colors duration-500"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=400&q=80"
+            alt="Abstract Brand Logo 3"
+            loading="lazy"
+            class="max-h-12 md:max-h-16 w-auto object-contain grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out mix-blend-multiply"
+          />
+        </div>
+
+        <!-- Sponsor 4 -->
+        <div
+          class="group relative flex items-center justify-center p-8 md:p-12 h-32 md:h-48 border-b border-r border-stone-200 hover:bg-white transition-colors duration-500"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1513530534585-c7b1394c6d51?auto=format&fit=crop&w=400&q=80"
+            alt="Abstract Brand Logo 4"
+            loading="lazy"
+            class="max-h-12 md:max-h-16 w-auto object-contain grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out mix-blend-multiply"
+          />
+        </div>
+
+        <!-- Sponsor 5 -->
+        <div
+          class="group relative flex items-center justify-center p-8 md:p-12 h-32 md:h-48 border-b border-r border-stone-200 hover:bg-white transition-colors duration-500"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=400&q=80"
+            alt="Abstract Brand Logo 5"
+            loading="lazy"
+            class="max-h-12 md:max-h-16 w-auto object-contain grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out mix-blend-multiply"
+          />
+        </div>
+
+        <!-- Sponsor 6 -->
+        <div
+          class="group relative flex items-center justify-center p-8 md:p-12 h-32 md:h-48 border-b border-r border-stone-200 hover:bg-white transition-colors duration-500"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1607453998774-a53676158925?auto=format&fit=crop&w=400&q=80"
+            alt="Abstract Brand Logo 6"
+            loading="lazy"
+            class="max-h-12 md:max-h-16 w-auto object-contain grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out"
+          />
+        </div>
+
+        <!-- Sponsor 7 -->
+        <div
+          class="group relative flex items-center justify-center p-8 md:p-12 h-32 md:h-48 border-b border-r border-stone-200 hover:bg-white transition-colors duration-500"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1502691876148-a84978e59af8?auto=format&fit=crop&w=400&q=80"
+            alt="Abstract Brand Logo 7"
+            loading="lazy"
+            class="max-h-12 md:max-h-16 w-auto object-contain grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out mix-blend-multiply"
+          />
+        </div>
+
+        <!-- Sponsor 8 -->
+        <div
+          class="group relative flex items-center justify-center p-8 md:p-12 h-32 md:h-48 border-b border-r border-stone-200 hover:bg-white transition-colors duration-500"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=400&q=80"
+            alt="Abstract Brand Logo 8"
+            loading="lazy"
+            class="max-h-12 md:max-h-16 w-auto object-contain grayscale opacity-30 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500 ease-out"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,234 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="About the Festival | DrishtiDosham Season 03">
+  <!-- HERO SECTION -->
+  <section
+    class="bg-[#FAFAFA] pt-24 pb-20 px-4 sm:px-6 lg:px-8 border-b border-stone-200 antialiased selection:bg-stone-900 selection:text-white relative overflow-hidden"
+  >
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none"
+    >
+    </div>
+
+    <div class="relative max-w-5xl mx-auto text-center z-10">
+      <div class="mb-4 flex items-center justify-center gap-4">
+        <span class="h-px w-8 bg-stone-400"></span>
+        <span
+          class="text-xs font-bold uppercase tracking-[0.3em] text-stone-600"
+          >Established 2024</span
+        >
+        <span class="h-px w-8 bg-stone-400"></span>
+      </div>
+
+      <h1
+        class="text-5xl sm:text-7xl md:text-8xl font-black text-stone-900 tracking-tighter uppercase leading-[0.9] mb-6"
+      >
+        About <span class="text-stone-500">DrishtiDosham</span>
+      </h1>
+
+      <p class="text-2xl md:text-4xl font-serif italic text-stone-700 mb-10">
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      </p>
+
+      <p
+        class="text-base md:text-lg text-stone-600 max-w-3xl mx-auto leading-relaxed"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
+      </p>
+    </div>
+  </section>
+
+  <!-- EDITORIAL SPLIT NARRATIVE SECTION -->
+  <section
+    class="bg-white py-24 md:py-32 px-4 sm:px-6 lg:px-8 border-b border-stone-200 antialiased"
+  >
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+        <!-- Left: Cinematic Stock Image Grid -->
+        <div class="lg:w-1/2 grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div
+              class="relative aspect-[3/4] overflow-hidden rounded-sm bg-stone-100"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=600&q=80"
+                alt="Vintage Film Reels"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="relative aspect-[4/3] overflow-hidden rounded-sm bg-stone-100"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2ea68?auto=format&fit=crop&w=600&q=80"
+                alt="Cinema Screening"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="space-y-4 pt-12">
+            <div
+              class="relative aspect-[4/3] overflow-hidden rounded-sm bg-stone-100"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&w=600&q=80"
+                alt="Clapperboard on Set"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                loading="lazy"
+              />
+            </div>
+            <div
+              class="relative aspect-[3/4] overflow-hidden rounded-sm bg-stone-100"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1574267432553-4b4628c6e255?auto=format&fit=crop&w=600&q=80"
+                alt="Dramatic Lighting"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Text Content -->
+        <div class="lg:w-1/2 flex flex-col justify-center">
+          <div class="mb-5 flex items-center gap-4">
+            <span class="h-px w-8 bg-stone-300"></span>
+            <span
+              class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-500"
+              >Our Vision & Mission</span
+            >
+          </div>
+          <h2
+            class="text-4xl sm:text-5xl font-black text-stone-950 tracking-tighter uppercase leading-none mb-8"
+          >
+            Elevating <br />
+            <span class="text-stone-400">Independent Voices</span>
+          </h2>
+          <p
+            class="text-lg font-serif italic text-stone-600 mb-6 leading-relaxed"
+          >
+            "Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur."
+          </p>
+          <p class="text-sm text-stone-500 leading-relaxed mb-6">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+            officia deserunt mollit anim id est laborum.
+          </p>
+          <p class="text-sm text-stone-500 leading-relaxed">
+            Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam
+            varius, turpis et commodo pharetra, est eros bibendum elit, nec
+            luctus magna felis sollicitudin mauris.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS / METRICS BANNER -->
+  <section class="bg-stone-950 text-white py-20 px-4 sm:px-6 lg:px-8">
+    <div
+      class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center"
+    >
+      <div>
+        <span
+          class="block text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-2"
+          >03</span
+        >
+        <span
+          class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-400"
+          >Festival Seasons</span
+        >
+      </div>
+      <div>
+        <span
+          class="block text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-2"
+          >150+</span
+        >
+        <span
+          class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-400"
+          >Films Screened</span
+        >
+      </div>
+      <div>
+        <span
+          class="block text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-2"
+          >₹5L+</span
+        >
+        <span
+          class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-400"
+          >Prizes Awarded</span
+        >
+      </div>
+      <div>
+        <span
+          class="block text-4xl sm:text-5xl md:text-6xl font-black tracking-tighter mb-2"
+          >500+</span
+        >
+        <span
+          class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-400"
+          >Filmmakers Hosted</span
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL ESSAY SECTION (Three Paragraphs) -->
+  <section
+    class="bg-[#FAFAFA] py-24 md:py-32 px-4 sm:px-6 lg:px-8 border-b border-stone-200"
+  >
+    <div class="max-w-4xl mx-auto">
+      <div class="mb-16 text-center">
+        <div class="mb-4 flex items-center justify-center gap-4">
+          <span class="h-px w-8 bg-stone-400"></span>
+          <span
+            class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-500"
+            >Curatorial Note</span
+          >
+          <span class="h-px w-8 bg-stone-400"></span>
+        </div>
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl font-black text-stone-900 tracking-tighter uppercase leading-none"
+        >
+          The <span class="text-stone-400">Perspective</span>
+        </h2>
+      </div>
+
+      <div
+        class="space-y-10 text-stone-700 text-base md:text-lg leading-relaxed font-serif"
+      >
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.
+        </p>
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum. Curabitur pretium
+          tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et
+          commodo pharetra, est eros bibendum elit, nec luctus magna felis
+          sollicitudin mauris. Integer in mauris eu nibh euismod gravida.
+        </p>
+        <p>
+          Nam liber tempor cum soluta nobis eleifend option congue nihil
+          imperdiet doming id quod mazim placerat facer possim assum. Typi non
+          habent claritatem insitam; est usus legentis in iis qui facit eorum
+          claritatem. Investigationes demonstraverunt lectores legere me lius
+          quod ii legunt saepius.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

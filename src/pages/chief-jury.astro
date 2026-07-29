@@ -1,0 +1,560 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Chief Jury Command Center | DrishtiDosham Season 03">
+  <!-- Generous vertical padding for a spacious, professional workspace -->
+  <section
+    class="bg-[#FAFAFA] min-h-[calc(100vh-6rem)] py-16 md:py-24 px-4 sm:px-6 lg:px-8 border-b border-stone-200 antialiased selection:bg-stone-900 selection:text-white"
+  >
+    <div class="max-w-7xl mx-auto">
+      <!-- Top Bar / Command Center Header -->
+      <div
+        class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 border-b border-stone-200 pb-8"
+      >
+        <div>
+          <div class="mb-3 flex items-center gap-4">
+            <span class="h-px w-8 bg-stone-400"></span>
+            <span
+              class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-500"
+              >Master Control Panel</span
+            >
+          </div>
+          <h1
+            class="text-3xl sm:text-4xl md:text-5xl font-black text-stone-900 tracking-tighter uppercase leading-none"
+          >
+            Chief Jury <span class="text-stone-400">Command Center</span>
+          </h1>
+        </div>
+
+        <div
+          class="flex items-center justify-between md:justify-end gap-6 bg-white md:bg-transparent p-4 md:p-0 border md:border-0 border-stone-200 rounded-sm"
+        >
+          <div>
+            <span
+              class="block text-xs font-bold uppercase tracking-widest text-stone-900"
+              >Prof. K. R. Mohanan</span
+            >
+            <span
+              class="block text-[10px] uppercase tracking-widest text-stone-500"
+              >Chief Curator • Master Access</span
+            >
+          </div>
+          <button
+            type="button"
+            id="export-btn"
+            class="px-5 py-2.5 bg-stone-900 text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-stone-800 transition-all cursor-pointer"
+          >
+            Export Master Data
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs for Chief Dashboard Sections -->
+      <div
+        class="flex flex-wrap items-center gap-4 mb-12 border-b border-stone-200 pb-6"
+      >
+        <button
+          type="button"
+          class="tab-btn px-6 py-3 text-xs font-bold uppercase tracking-widest bg-stone-900 text-white rounded-sm transition-all cursor-pointer"
+          data-target="tab-rankings"
+        >
+          Live Rankings & Scores
+        </button>
+        <button
+          type="button"
+          class="tab-btn px-6 py-3 text-xs font-bold uppercase tracking-widest bg-white text-stone-600 border border-stone-200 rounded-sm hover:border-stone-900 transition-all cursor-pointer"
+          data-target="tab-pendancy"
+        >
+          Jury Pendancy Matrix
+        </button>
+        <button
+          type="button"
+          class="tab-btn px-6 py-3 text-xs font-bold uppercase tracking-widest bg-white text-stone-600 border border-stone-200 rounded-sm hover:border-stone-900 transition-all cursor-pointer"
+          data-target="tab-juries"
+        >
+          Manage Juries Panel
+        </button>
+      </div>
+
+      <!-- TAB 1: LIVE RANKINGS & EVALUATION MATRIX -->
+      <div id="tab-rankings" class="dashboard-tab space-y-12">
+        <!-- Leaderboard Overview Table -->
+        <div
+          class="bg-white border border-stone-200 rounded-sm shadow-sm overflow-hidden"
+        >
+          <div
+            class="p-8 border-b border-stone-200 flex flex-col md:flex-row md:items-center justify-between gap-4"
+          >
+            <div>
+              <h2
+                class="text-xl font-black text-stone-900 uppercase tracking-tight mb-1"
+              >
+                Official Festival Leaderboard
+              </h2>
+              <p class="text-xs text-stone-500 uppercase tracking-widest">
+                Aggregated scores across all evaluating jury members
+              </p>
+            </div>
+            <button
+              type="button"
+              class="export-data-trigger px-4 py-2 bg-stone-900 text-white text-[10px] font-bold uppercase tracking-widest rounded-sm hover:bg-stone-800 transition-all cursor-pointer"
+            >
+              Export Details
+            </button>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr
+                  class="border-b border-stone-200 bg-stone-50 text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500"
+                >
+                  <th class="py-4 px-6">Rank</th>
+                  <th class="py-4 px-6">Film Title & Director</th>
+                  <th class="py-4 px-6 text-center">Dr. Anvar Sadik</th>
+                  <th class="py-4 px-6 text-center">Maya Menon</th>
+                  <th class="py-4 px-6 text-center">Final Aggregated</th>
+                  <th class="py-4 px-6 text-right">Action</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-stone-100 text-sm">
+                <!-- Row 1 -->
+                <tr class="hover:bg-stone-50/50 transition-colors">
+                  <td class="py-5 px-6 font-black text-stone-900">#01</td>
+                  <td class="py-5 px-6">
+                    <span class="block font-serif italic text-lg text-stone-900"
+                      >Oru Vannathi Puzha</span
+                    >
+                    <span
+                      class="text-[10px] font-bold uppercase tracking-widest text-stone-500"
+                      >Dir. Sidharth P.</span
+                    >
+                  </td>
+                  <td class="py-5 px-6 text-center font-bold text-stone-700"
+                    >88/100</td
+                  >
+                  <td class="py-5 px-6 text-center font-bold text-stone-700"
+                    >92/100</td
+                  >
+                  <td
+                    class="py-5 px-6 text-center font-black text-stone-900 bg-stone-50"
+                    data-id="1">90.0 / 100</td
+                  >
+                  <td class="py-5 px-6 text-right">
+                    <button
+                      type="button"
+                      class="export-data-trigger px-4 py-2 bg-stone-100 text-stone-900 border border-stone-300 text-[10px] font-bold uppercase tracking-widest rounded-sm hover:border-stone-900 transition-all cursor-pointer"
+                      data-id="1"
+                      data-title="Oru Vannathi Puzha"
+                    >
+                      Export Details
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Row 2 -->
+                <tr class="hover:bg-stone-50/50 transition-colors">
+                  <td class="py-5 px-6 font-black text-stone-900">#02</td>
+                  <td class="py-5 px-6">
+                    <span class="block font-serif italic text-lg text-stone-900"
+                      >Mazha Nila</span
+                    >
+                    <span
+                      class="text-[10px] font-bold uppercase tracking-widest text-stone-500"
+                      >Dir. Kavya Madhavan</span
+                    >
+                  </td>
+                  <td class="py-5 px-6 text-center font-bold text-stone-700"
+                    >82/100</td
+                  >
+                  <td class="py-5 px-6 text-center font-bold text-stone-700"
+                    >85/100</td
+                  >
+                  <td
+                    class="py-5 px-6 text-center font-black text-stone-900 bg-stone-50"
+                    data-id="4">83.5 / 100</td
+                  >
+                  <td class="py-5 px-6 text-right">
+                    <button
+                      type="button"
+                      class="export-data-trigger px-4 py-2 bg-stone-100 text-stone-900 border border-stone-300 text-[10px] font-bold uppercase tracking-widest rounded-sm hover:border-stone-900 transition-all cursor-pointer"
+                      data-id="4"
+                      data-title="Mazha Nila"
+                    >
+                      Export Details
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Row 3 -->
+                <tr class="hover:bg-stone-50/50 transition-colors">
+                  <td class="py-5 px-6 font-black text-stone-900">#03</td>
+                  <td class="py-5 px-6">
+                    <span class="block font-serif italic text-lg text-stone-900"
+                      >Chayakadai Vartha</span
+                    >
+                    <span
+                      class="text-[10px] font-bold uppercase tracking-widest text-stone-500"
+                      >Dir. Fathima Beevi</span
+                    >
+                  </td>
+                  <td class="py-5 px-6 text-center font-bold text-stone-700"
+                    >74/100</td
+                  >
+                  <td class="py-5 px-6 text-center font-bold text-stone-700"
+                    >79/100</td
+                  >
+                  <td
+                    class="py-5 px-6 text-center font-black text-stone-900 bg-stone-50"
+                    data-id="2">76.5 / 100</td
+                  >
+                  <td class="py-5 px-6 text-right">
+                    <button
+                      type="button"
+                      class="export-data-trigger px-4 py-2 bg-stone-100 text-stone-900 border border-stone-300 text-[10px] font-bold uppercase tracking-widest rounded-sm hover:border-stone-900 transition-all cursor-pointer"
+                      data-id="2"
+                      data-title="Chayakadai Vartha"
+                    >
+                      Export Details
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- Row 4 -->
+                <tr class="hover:bg-stone-50/50 transition-colors">
+                  <td class="py-5 px-6 font-black text-stone-900">#04</td>
+                  <td class="py-5 px-6">
+                    <span class="block font-serif italic text-lg text-stone-900"
+                      >Theeppori</span
+                    >
+                    <span
+                      class="text-[10px] font-bold uppercase tracking-widest text-stone-500"
+                      >Dir. Vishnu Varma</span
+                    >
+                  </td>
+                  <td class="py-5 px-6 text-center font-bold text-stone-700"
+                    >68/100</td
+                  >
+                  <td class="py-5 px-6 text-center font-bold text-stone-700"
+                    >72/100</td
+                  >
+                  <td
+                    class="py-5 px-6 text-center font-black text-stone-900 bg-stone-50"
+                    data-id="3">70.0 / 100</td
+                  >
+                  <td class="py-5 px-6 text-right">
+                    <button
+                      type="button"
+                      class="export-data-trigger px-4 py-2 bg-stone-100 text-stone-900 border border-stone-300 text-[10px] font-bold uppercase tracking-widest rounded-sm hover:border-stone-900 transition-all cursor-pointer"
+                      data-id="3"
+                      data-title="Theeppori"
+                    >
+                      Export Details
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: JURY PENDANCY MATRIX -->
+      <div id="tab-pendancy" class="dashboard-tab hidden space-y-12">
+        <div
+          class="bg-white border border-stone-200 rounded-sm shadow-sm overflow-hidden"
+        >
+          <div class="p-8 border-b border-stone-200">
+            <h2
+              class="text-xl font-black text-stone-900 uppercase tracking-tight mb-1"
+            >
+              Jury Member Evaluation Status
+            </h2>
+            <p class="text-xs text-stone-500 uppercase tracking-widest">
+              Track individual member progress and score distribution across all
+              assigned films
+            </p>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+              <thead>
+                <tr
+                  class="border-b border-stone-200 bg-stone-50 text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500"
+                >
+                  <th class="py-4 px-6">Jury Member</th>
+                  <th class="py-4 px-6 text-center">Oru Vannathi Puzha</th>
+                  <th class="py-4 px-6 text-center">Mazha Nila</th>
+                  <th class="py-4 px-6 text-center">Chayakadai Vartha</th>
+                  <th class="py-4 px-6 text-center">Theeppori</th>
+                  <th class="py-4 px-6 text-center">Overall Progress</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-stone-100 text-sm">
+                <tr class="hover:bg-stone-50/50 transition-colors">
+                  <td class="py-5 px-6 font-bold text-stone-900"
+                    >Dr. Anvar Sadik</td
+                  >
+                  <td class="py-5 px-6 text-center"
+                    ><span
+                      class="text-[10px] font-bold uppercase tracking-widest bg-green-50 text-green-700 border border-green-200 px-2.5 py-1 rounded-sm"
+                      >Scored (88)</span
+                    ></td
+                  >
+                  <td class="py-5 px-6 text-center"
+                    ><span
+                      class="text-[10px] font-bold uppercase tracking-widest bg-green-50 text-green-700 border border-green-200 px-2.5 py-1 rounded-sm"
+                      >Scored (82)</span
+                    ></td
+                  >
+                  <td class="py-5 px-6 text-center"
+                    ><span
+                      class="text-[10px] font-bold uppercase tracking-widest bg-orange-50 text-orange-700 border border-orange-200 px-2.5 py-1 rounded-sm"
+                      >Pending</span
+                    ></td
+                  >
+                  <td class="py-5 px-6 text-center"
+                    ><span
+                      class="text-[10px] font-bold uppercase tracking-widest bg-orange-50 text-orange-700 border border-orange-200 px-2.5 py-1 rounded-sm"
+                      >Pending</span
+                    ></td
+                  >
+                  <td class="py-5 px-6 text-center font-black text-stone-900"
+                    >2 / 4 (50%)</td
+                  >
+                </tr>
+                <tr class="hover:bg-stone-50/50 transition-colors">
+                  <td class="py-5 px-6 font-bold text-stone-900">Maya Menon</td>
+                  <td class="py-5 px-6 text-center"
+                    ><span
+                      class="text-[10px] font-bold uppercase tracking-widest bg-green-50 text-green-700 border border-green-200 px-2.5 py-1 rounded-sm"
+                      >Scored (92)</span
+                    ></td
+                  >
+                  <td class="py-5 px-6 text-center"
+                    ><span
+                      class="text-[10px] font-bold uppercase tracking-widest bg-green-50 text-green-700 border border-green-200 px-2.5 py-1 rounded-sm"
+                      >Scored (85)</span
+                    ></td
+                  >
+                  <td class="py-5 px-6 text-center"
+                    ><span
+                      class="text-[10px] font-bold uppercase tracking-widest bg-green-50 text-green-700 border border-green-200 px-2.5 py-1 rounded-sm"
+                      >Scored (79)</span
+                    ></td
+                  >
+                  <td class="py-5 px-6 text-center"
+                    ><span
+                      class="text-[10px] font-bold uppercase tracking-widest bg-green-50 text-green-700 border border-green-200 px-2.5 py-1 rounded-sm"
+                      >Scored (72)</span
+                    ></td
+                  >
+                  <td
+                    class="py-5 px-6 text-center font-black text-stone-900 bg-stone-50"
+                    >4 / 4 (100% Complete)</td
+                  >
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: MANAGE JURIES PANEL -->
+      <div id="tab-juries" class="dashboard-tab hidden space-y-12">
+        <!-- Add Jury Form Container -->
+        <div
+          class="bg-white border border-stone-200 p-8 sm:p-12 rounded-sm shadow-sm max-w-2xl"
+        >
+          <h2
+            class="text-xl font-black text-stone-900 uppercase tracking-tight mb-2"
+          >
+            Add New Jury Member
+          </h2>
+          <p class="text-xs text-stone-500 uppercase tracking-widest mb-8">
+            Grant secure credentials to an official evaluation panelist
+          </p>
+
+          <form
+            id="add-jury-form"
+            onsubmit="event.preventDefault();"
+            class="space-y-6"
+          >
+            <div class="flex flex-col mb-6">
+              <label
+                class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500 mb-2"
+                >Full Name</label
+              >
+              <input
+                type="text"
+                id="jury-name"
+                placeholder="Dr. R. Varma"
+                class="bg-transparent border-b border-stone-300 py-3 text-stone-900 placeholder-stone-300 focus:outline-none focus:border-stone-900 rounded-none text-sm"
+                required
+              />
+            </div>
+
+            <div class="flex flex-col mb-6">
+              <label
+                class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500 mb-2"
+                >Official Email Address</label
+              >
+              <input
+                type="email"
+                id="jury-email"
+                placeholder="varma@drishtidosham.in"
+                class="bg-transparent border-b border-stone-300 py-3 text-stone-900 placeholder-stone-300 focus:outline-none focus:border-stone-900 rounded-none text-sm"
+                required
+              />
+            </div>
+
+            <div class="flex justify-end">
+              <button
+                type="submit"
+                class="px-8 py-3.5 bg-stone-900 text-white text-xs font-bold uppercase tracking-widest rounded-sm hover:bg-stone-800 transition-all cursor-pointer"
+              >
+                Issue Jury Credentials
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Active Juries Table -->
+        <div
+          class="bg-white border border-stone-200 rounded-sm shadow-sm overflow-hidden"
+        >
+          <div class="p-8 border-b border-stone-200">
+            <h2
+              class="text-xl font-black text-stone-900 uppercase tracking-tight mb-1"
+            >
+              Active Jury Roster
+            </h2>
+            <p class="text-xs text-stone-500 uppercase tracking-widest">
+              Currently authorized evaluators in the system
+            </p>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table id="juries-table" class="w-full text-left border-collapse">
+              <thead>
+                <tr
+                  class="border-b border-stone-200 bg-stone-50 text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500"
+                >
+                  <th class="py-4 px-6">Name</th>
+                  <th class="py-4 px-6">Email</th>
+                  <th class="py-4 px-6 text-right">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-stone-100 text-sm">
+                <tr class="hover:bg-stone-50/50 transition-colors">
+                  <td class="py-4 px-6 font-bold text-stone-900"
+                    >Dr. Anvar Sadik</td
+                  >
+                  <td class="py-4 px-6 text-stone-600"
+                    >anvar@drishtidosham.in</td
+                  >
+                  <td class="py-4 px-6 text-right">
+                    <button
+                      type="button"
+                      class="delete-jury-btn text-xs font-bold text-red-600 hover:text-red-800 uppercase tracking-widest cursor-pointer"
+                      >Remove</button
+                    >
+                  </td>
+                </tr>
+                <tr class="hover:bg-stone-50/50 transition-colors">
+                  <td class="py-4 px-6 font-bold text-stone-900">Maya Menon</td>
+                  <td class="py-4 px-6 text-stone-600">maya@drishtidosham.in</td
+                  >
+                  <td class="py-4 px-6 text-right">
+                    <button
+                      type="button"
+                      class="delete-jury-btn text-xs font-bold text-red-600 hover:text-red-800 uppercase tracking-widest cursor-pointer"
+                      >Remove</button
+                    >
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script State & Interactivity -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Tab Switching
+      const tabBtns = document.querySelectorAll(".tab-btn");
+      const tabs = document.querySelectorAll(".dashboard-tab");
+
+      tabBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const targetId = btn.getAttribute("data-target");
+
+          tabBtns.forEach((b) => {
+            b.classList.replace("bg-stone-900", "bg-white");
+            b.classList.replace("text-white", "text-stone-600");
+            b.classList.add("border", "border-stone-200");
+          });
+          btn.classList.replace("bg-white", "bg-stone-900");
+          btn.classList.replace("text-stone-600", "text-white");
+          btn.classList.remove("border", "border-stone-200");
+
+          tabs.forEach((t) => t.classList.add("hidden"));
+          document.getElementById(targetId!)?.classList.remove("hidden");
+        });
+      });
+
+      // Add & Remove Juries Dummy Interactivity
+      const addJuryForm = document.getElementById("add-jury-form");
+      const juriesTableBody = document.querySelector("#juries-table tbody");
+
+      addJuryForm?.addEventListener("submit", () => {
+        const name = (document.getElementById("jury-name") as HTMLInputElement)
+          .value;
+        const email = (
+          document.getElementById("jury-email") as HTMLInputElement
+        ).value;
+
+        if (!name || !email) return;
+
+        const newRow = document.createElement("tr");
+        newRow.className = "hover:bg-stone-50/50 transition-colors";
+        newRow.innerHTML = `
+          <td class="py-4 px-6 font-bold text-stone-900">${name}</td>
+          <td class="py-4 px-6 text-stone-600">${email}</td>
+          <td class="py-4 px-6 text-right">
+            <button type="button" class="delete-jury-btn text-xs font-bold text-red-600 hover:text-red-800 uppercase tracking-widest cursor-pointer">Remove</button>
+          </td>
+        `;
+        juriesTableBody?.appendChild(newRow);
+        (addJuryForm as HTMLFormElement).reset();
+        alert(`Credentials successfully issued to ${name}!`);
+      });
+
+      // Delegation for delete buttons
+      document.addEventListener("click", (e) => {
+        if ((e.target as HTMLElement).classList.contains("delete-jury-btn")) {
+          (e.target as HTMLElement).closest("tr")?.remove();
+        }
+      });
+
+      // Single-click Export Dummy Action
+      const exportBtn = document.getElementById("export-btn");
+      const exportTriggers = document.querySelectorAll(".export-data-trigger");
+
+      function handleExport() {
+        alert(
+          "Master festival evaluation data successfully exported to CSV (Dummy Action).",
+        );
+      }
+
+      exportBtn?.addEventListener("click", handleExport);
+      exportTriggers.forEach((btn) => {
+        btn.addEventListener("click", handleExport);
+      });
+    });
+  </script>
+</BaseLayout>

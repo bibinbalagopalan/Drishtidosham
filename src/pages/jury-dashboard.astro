@@ -1,0 +1,855 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Jury Evaluation Portal | DrishtiDosham Season 03">
+  <!-- Generous vertical padding (py-16 md:py-24) ensures plenty of breathing room between header and footer -->
+  <section
+    class="bg-[#FAFAFA] min-h-[calc(100vh-6rem)] py-16 md:py-24 px-4 sm:px-6 lg:px-8 border-b border-stone-200 antialiased selection:bg-stone-900 selection:text-white"
+  >
+    <div class="max-w-5xl mx-auto">
+      <!-- Top Bar / Portal Header -->
+      <div
+        class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 border-b border-stone-200 pb-8"
+      >
+        <div>
+          <div class="mb-3 flex items-center gap-4">
+            <span class="h-px w-8 bg-stone-400"></span>
+            <span
+              class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-500"
+              >Secure Review Panel</span
+            >
+          </div>
+          <h1
+            class="text-3xl sm:text-4xl md:text-5xl font-black text-stone-900 tracking-tighter uppercase leading-none"
+          >
+            Jury <span class="text-stone-400">Dashboard</span>
+          </h1>
+        </div>
+
+        <div
+          class="flex items-center justify-between md:justify-end gap-6 bg-white md:bg-transparent p-4 md:p-0 border md:border-0 border-stone-200 rounded-sm"
+        >
+          <div>
+            <span
+              class="block text-xs font-bold uppercase tracking-widest text-stone-900"
+              >Dr. Anvar Sadik</span
+            >
+            <span
+              id="global-progress-label"
+              class="block text-[10px] uppercase tracking-widest text-stone-500"
+              >Panel A • 0 of 4 Evaluated</span
+            >
+          </div>
+          <a
+            href="/login"
+            class="px-5 py-2.5 bg-transparent text-stone-900 text-xs font-bold uppercase tracking-widest rounded-sm border border-stone-300 hover:border-stone-900 transition-all"
+          >
+            Sign Out
+          </a>
+        </div>
+      </div>
+
+      <!-- VIEW MODE 1: MASTER LIST (Shown by default) -->
+      <div id="master-view" class="space-y-6">
+        <div class="flex items-center justify-between mb-2">
+          <h3
+            class="text-xs font-bold uppercase tracking-[0.2em] text-stone-500"
+          >
+            Assigned Screeners (4)
+          </h3>
+          <span
+            class="text-[10px] font-bold uppercase tracking-widest bg-stone-900 text-white px-3 py-1 rounded-sm"
+            >Select to Evaluate</span
+          >
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Film Card 1 -->
+          <div
+            class="film-card bg-white border border-stone-200 p-8 rounded-sm cursor-pointer hover:border-stone-900 transition-all shadow-sm relative group flex flex-col justify-between"
+            data-id="1"
+            data-title="Oru Vannathi Puzha"
+            data-dir="Sidharth P."
+            data-runtime="18 Mins"
+            data-synopsis="A lyrical meditation on a vanishing riverine community in northern Malabar, told through the eyes of an old ferryman."
+            data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          >
+            <div>
+              <div class="mb-4">
+                <span
+                  class="status-badge inline-block text-[10px] font-bold uppercase tracking-widest bg-orange-50 text-orange-700 border border-orange-200 px-2.5 py-1 rounded-sm"
+                  >Pending</span
+                >
+              </div>
+              <h4 class="text-2xl font-serif italic text-stone-900 mb-1">
+                Oru Vannathi Puzha
+              </h4>
+              <p
+                class="text-xs font-bold uppercase tracking-widest text-stone-500 mb-6"
+              >
+                Dir. Sidharth P. • 18 Mins
+              </p>
+            </div>
+            <div
+              class="flex items-center justify-between text-xs font-bold uppercase tracking-widest text-stone-600 border-t border-stone-100 pt-4 mt-4"
+            >
+              <span class="card-score-label text-stone-400">Score: 0 / 100</span
+              >
+              <span
+                class="text-stone-900 group-hover:translate-x-1 transition-transform"
+                >Start Evaluation →</span
+              >
+            </div>
+          </div>
+
+          <!-- Film Card 2 -->
+          <div
+            class="film-card bg-white border border-stone-200 p-8 rounded-sm cursor-pointer hover:border-stone-900 transition-all shadow-sm relative group flex flex-col justify-between"
+            data-id="2"
+            data-title="Chayakadai Vartha"
+            data-dir="Fathima Beevi"
+            data-runtime="14 Mins"
+            data-synopsis="Political discourse, roadside gossip, and hot tea brew an explosive morning in a small town Wayanad junction."
+            data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          >
+            <div>
+              <div class="mb-4">
+                <span
+                  class="status-badge inline-block text-[10px] font-bold uppercase tracking-widest bg-orange-50 text-orange-700 border border-orange-200 px-2.5 py-1 rounded-sm"
+                  >Pending</span
+                >
+              </div>
+              <h4 class="text-2xl font-serif italic text-stone-900 mb-1">
+                Chayakadai Vartha
+              </h4>
+              <p
+                class="text-xs font-bold uppercase tracking-widest text-stone-500 mb-6"
+              >
+                Dir. Fathima Beevi • 14 Mins
+              </p>
+            </div>
+            <div
+              class="flex items-center justify-between text-xs font-bold uppercase tracking-widest text-stone-600 border-t border-stone-100 pt-4 mt-4"
+            >
+              <span class="card-score-label text-stone-400">Score: 0 / 100</span
+              >
+              <span
+                class="text-stone-900 group-hover:translate-x-1 transition-transform"
+                >Start Evaluation →</span
+              >
+            </div>
+          </div>
+
+          <!-- Film Card 3 -->
+          <div
+            class="film-card bg-white border border-stone-200 p-8 rounded-sm cursor-pointer hover:border-stone-900 transition-all shadow-sm relative group flex flex-col justify-between"
+            data-id="3"
+            data-title="Theeppori"
+            data-dir="Vishnu Varma"
+            data-runtime="22 Mins"
+            data-synopsis="A fiery backstage drama about aging Kathakali artists struggling to preserve their makeup boxes in a digital age."
+            data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          >
+            <div>
+              <div class="mb-4">
+                <span
+                  class="status-badge inline-block text-[10px] font-bold uppercase tracking-widest bg-orange-50 text-orange-700 border border-orange-200 px-2.5 py-1 rounded-sm"
+                  >Pending</span
+                >
+              </div>
+              <h4 class="text-2xl font-serif italic text-stone-900 mb-1">
+                Theeppori
+              </h4>
+              <p
+                class="text-xs font-bold uppercase tracking-widest text-stone-500 mb-6"
+              >
+                Dir. Vishnu Varma • 22 Mins
+              </p>
+            </div>
+            <div
+              class="flex items-center justify-between text-xs font-bold uppercase tracking-widest text-stone-600 border-t border-stone-100 pt-4 mt-4"
+            >
+              <span class="card-score-label text-stone-400">Score: 0 / 100</span
+              >
+              <span
+                class="text-stone-900 group-hover:translate-x-1 transition-transform"
+                >Start Evaluation →</span
+              >
+            </div>
+          </div>
+
+          <!-- Film Card 4 -->
+          <div
+            class="film-card bg-white border border-stone-200 p-8 rounded-sm cursor-pointer hover:border-stone-900 transition-all shadow-sm relative group flex flex-col justify-between"
+            data-id="4"
+            data-title="Mazha Nila"
+            data-dir="Kavya Madhavan"
+            data-runtime="10 Mins"
+            data-synopsis="An experimental silent short capturing the sensory experience of a sudden summer downpour in an old ancestral courtyard."
+            data-video="https://www.youtube.com/embed/dQw4w9WgXcQ"
+          >
+            <div>
+              <div class="mb-4">
+                <span
+                  class="status-badge inline-block text-[10px] font-bold uppercase tracking-widest bg-orange-50 text-orange-700 border border-orange-200 px-2.5 py-1 rounded-sm"
+                  >Pending</span
+                >
+              </div>
+              <h4 class="text-2xl font-serif italic text-stone-900 mb-1">
+                Mazha Nila
+              </h4>
+              <p
+                class="text-xs font-bold uppercase tracking-widest text-stone-500 mb-6"
+              >
+                Dir. Kavya Madhavan • 10 Mins
+              </p>
+            </div>
+            <div
+              class="flex items-center justify-between text-xs font-bold uppercase tracking-widest text-stone-600 border-t border-stone-100 pt-4 mt-4"
+            >
+              <span class="card-score-label text-stone-400">Score: 0 / 100</span
+              >
+              <span
+                class="text-stone-900 group-hover:translate-x-1 transition-transform"
+                >Start Evaluation →</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIEW MODE 2: FOCUS EVALUATION PANEL (Hidden by default, shown when movie is selected) -->
+      <div id="detail-view" class="hidden space-y-10">
+        <!-- Back Navigation Control -->
+        <div>
+          <button
+            type="button"
+            id="back-to-list-btn"
+            class="inline-flex items-center gap-3 text-xs font-bold uppercase tracking-widest text-stone-500 hover:text-stone-900 transition-colors bg-white px-5 py-3 border border-stone-200 rounded-sm shadow-sm cursor-pointer"
+          >
+            <span>←</span> Return to All Screeners
+          </button>
+        </div>
+
+        <!-- Selected Movie Metadata Banner -->
+        <div
+          class="bg-white border border-stone-200 p-8 sm:p-12 rounded-sm shadow-sm"
+        >
+          <div
+            class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-stone-100"
+          >
+            <div>
+              <h2
+                id="active-title"
+                class="text-3xl sm:text-4xl font-black text-stone-900 tracking-tight uppercase"
+              >
+                Oru Vannathi Puzha
+              </h2>
+            </div>
+            <div class="flex items-center gap-4">
+              <span
+                id="active-runtime"
+                class="text-xs font-bold uppercase tracking-widest bg-stone-100 text-stone-700 px-3 py-1.5 rounded-sm"
+                >18 Mins</span
+              >
+              <span
+                id="active-dir"
+                class="text-xs font-bold uppercase tracking-widest text-stone-500"
+                >Dir. Sidharth P.</span
+              >
+            </div>
+          </div>
+          <p
+            id="active-synopsis"
+            class="text-sm text-stone-600 leading-relaxed max-w-3xl"
+          >
+            A lyrical meditation on a vanishing riverine community in northern
+            Malabar, told through the eyes of an old ferryman.
+          </p>
+        </div>
+
+        <!-- Online Screener Video Player -->
+        <div class="bg-white border border-stone-200 p-8 rounded-sm shadow-sm">
+          <label
+            class="block text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500 mb-4"
+            >Online Screener Preview</label
+          >
+          <div
+            class="relative aspect-video bg-stone-950 rounded-sm overflow-hidden shadow-inner"
+          >
+            <iframe
+              id="active-player"
+              src=""
+              title="Movie Screener"
+              class="absolute inset-0 w-full h-full border-0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- 10-Point Detailed Rubric Form -->
+        <div
+          class="bg-white border border-stone-200 p-8 sm:p-12 rounded-sm shadow-sm"
+        >
+          <div
+            class="flex items-center justify-between border-b border-stone-200 pb-6 mb-10"
+          >
+            <div>
+              <h3
+                class="text-lg font-black text-stone-900 uppercase tracking-tight mb-1"
+              >
+                Official Jury Evaluation Rubric
+              </h3>
+              <p class="text-xs text-stone-500 uppercase tracking-widest">
+                Rate each criterion from 0 to 10 points (Total: 100 Marks)
+              </p>
+            </div>
+            <div class="text-right">
+              <span
+                class="block text-[10px] font-bold uppercase tracking-widest text-stone-400"
+                >Total Score</span
+              >
+              <span id="total-score" class="text-3xl font-black text-stone-900"
+                >0</span
+              ><span class="text-xs text-stone-400 font-bold">/100</span>
+            </div>
+          </div>
+
+          <form
+            id="scoring-form"
+            onsubmit="event.preventDefault();"
+            class="space-y-10"
+          >
+            <!-- Rubric Items Loop (10 Criteria with generous vertical space) -->
+            <div class="grid grid-cols-1 gap-8">
+              <!-- 1 -->
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 bg-stone-50/50 border border-stone-100 rounded-sm"
+              >
+                <div class="max-w-xl">
+                  <span
+                    class="block text-sm font-bold text-stone-900 uppercase tracking-wider mb-1"
+                    >1. Originality & Core Concept</span
+                  >
+                  <span class="block text-xs text-stone-500"
+                    >Freshness of the premise, narrative bravery, and uniqueness
+                    of vision.</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-4 justify-between md:justify-end"
+                >
+                  <input
+                    type="range"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="score-range accent-stone-900 w-40 sm:w-48 cursor-pointer"
+                    data-target="score-1"
+                    data-index="1"
+                  />
+                  <span
+                    id="score-1"
+                    class="text-base font-black text-stone-900 w-12 text-right"
+                    >0/10</span
+                  >
+                </div>
+              </div>
+
+              <!-- 2 -->
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 bg-stone-50/50 border border-stone-100 rounded-sm"
+              >
+                <div class="max-w-xl">
+                  <span
+                    class="block text-sm font-bold text-stone-900 uppercase tracking-wider mb-1"
+                    >2. Screenplay & Structure</span
+                  >
+                  <span class="block text-xs text-stone-500"
+                    >Pacing, plot progression, structural tightness, and
+                    narrative arc.</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-4 justify-between md:justify-end"
+                >
+                  <input
+                    type="range"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="score-range accent-stone-900 w-40 sm:w-48 cursor-pointer"
+                    data-target="score-2"
+                    data-index="2"
+                  />
+                  <span
+                    id="score-2"
+                    class="text-base font-black text-stone-900 w-12 text-right"
+                    >0/10</span
+                  >
+                </div>
+              </div>
+
+              <!-- 3 -->
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 bg-stone-50/50 border border-stone-100 rounded-sm"
+              >
+                <div class="max-w-xl">
+                  <span
+                    class="block text-sm font-bold text-stone-900 uppercase tracking-wider mb-1"
+                    >3. Dialogues & Subtext</span
+                  >
+                  <span class="block text-xs text-stone-500"
+                    >Authenticity of regional dialect, conversational depth, and
+                    subtextual weight.</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-4 justify-between md:justify-end"
+                >
+                  <input
+                    type="range"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="score-range accent-stone-900 w-40 sm:w-48 cursor-pointer"
+                    data-target="score-3"
+                    data-index="3"
+                  />
+                  <span
+                    id="score-3"
+                    class="text-base font-black text-stone-900 w-12 text-right"
+                    >0/10</span
+                  >
+                </div>
+              </div>
+
+              <!-- 4 -->
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 bg-stone-50/50 border border-stone-100 rounded-sm"
+              >
+                <div class="max-w-xl">
+                  <span
+                    class="block text-sm font-bold text-stone-900 uppercase tracking-wider mb-1"
+                    >4. Directorial Vision</span
+                  >
+                  <span class="block text-xs text-stone-500"
+                    >Command over pacing, atmospheric control, and creative
+                    execution.</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-4 justify-between md:justify-end"
+                >
+                  <input
+                    type="range"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="score-range accent-stone-900 w-40 sm:w-48 cursor-pointer"
+                    data-target="score-4"
+                    data-index="4"
+                  />
+                  <span
+                    id="score-4"
+                    class="text-base font-black text-stone-900 w-12 text-right"
+                    >0/10</span
+                  >
+                </div>
+              </div>
+
+              <!-- 5 -->
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 bg-stone-50/50 border border-stone-100 rounded-sm"
+              >
+                <div class="max-w-xl">
+                  <span
+                    class="block text-sm font-bold text-stone-900 uppercase tracking-wider mb-1"
+                    >5. Lead & Supporting Performances</span
+                  >
+                  <span class="block text-xs text-stone-500"
+                    >Credibility of acting, emotional range, and character
+                    immersion.</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-4 justify-between md:justify-end"
+                >
+                  <input
+                    type="range"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="score-range accent-stone-900 w-40 sm:w-48 cursor-pointer"
+                    data-target="score-5"
+                    data-index="5"
+                  />
+                  <span
+                    id="score-5"
+                    class="text-base font-black text-stone-900 w-12 text-right"
+                    >0/10</span
+                  >
+                </div>
+              </div>
+
+              <!-- 6 -->
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 bg-stone-50/50 border border-stone-100 rounded-sm"
+              >
+                <div class="max-w-xl">
+                  <span
+                    class="block text-sm font-bold text-stone-900 uppercase tracking-wider mb-1"
+                    >6. Cinematography & Framing</span
+                  >
+                  <span class="block text-xs text-stone-500"
+                    >Visual storytelling, camera movement, composition, and lens
+                    choices.</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-4 justify-between md:justify-end"
+                >
+                  <input
+                    type="range"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="score-range accent-stone-900 w-40 sm:w-48 cursor-pointer"
+                    data-target="score-6"
+                    data-index="6"
+                  />
+                  <span
+                    id="score-6"
+                    class="text-base font-black text-stone-900 w-12 text-right"
+                    >0/10</span
+                  >
+                </div>
+              </div>
+
+              <!-- 7 -->
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 bg-stone-50/50 border border-stone-100 rounded-sm"
+              >
+                <div class="max-w-xl">
+                  <span
+                    class="block text-sm font-bold text-stone-900 uppercase tracking-wider mb-1"
+                    >7. Lighting & Color Grading</span
+                  >
+                  <span class="block text-xs text-stone-500"
+                    >Atmospheric lighting setup and emotional tone mapping
+                    through color.</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-4 justify-between md:justify-end"
+                >
+                  <input
+                    type="range"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="score-range accent-stone-900 w-40 sm:w-48 cursor-pointer"
+                    data-target="score-7"
+                    data-index="7"
+                  />
+                  <span
+                    id="score-7"
+                    class="text-base font-black text-stone-900 w-12 text-right"
+                    >0/10</span
+                  >
+                </div>
+              </div>
+
+              <!-- 8 -->
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 bg-stone-50/50 border border-stone-100 rounded-sm"
+              >
+                <div class="max-w-xl">
+                  <span
+                    class="block text-sm font-bold text-stone-900 uppercase tracking-wider mb-1"
+                    >8. Editing & Continuity</span
+                  >
+                  <span class="block text-xs text-stone-500"
+                    >Rhythm of cuts, transition flow, and spatial continuity.</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-4 justify-between md:justify-end"
+                >
+                  <input
+                    type="range"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="score-range accent-stone-900 w-40 sm:w-48 cursor-pointer"
+                    data-target="score-8"
+                    data-index="8"
+                  />
+                  <span
+                    id="score-8"
+                    class="text-base font-black text-stone-900 w-12 text-right"
+                    >0/10</span
+                  >
+                </div>
+              </div>
+
+              <!-- 9 -->
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 bg-stone-50/50 border border-stone-100 rounded-sm"
+              >
+                <div class="max-w-xl">
+                  <span
+                    class="block text-sm font-bold text-stone-900 uppercase tracking-wider mb-1"
+                    >9. Sound Design & Score</span
+                  >
+                  <span class="block text-xs text-stone-500"
+                    >Acoustic clarity, ambient layering, score integration, and
+                    mix quality.</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-4 justify-between md:justify-end"
+                >
+                  <input
+                    type="range"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="score-range accent-stone-900 w-40 sm:w-48 cursor-pointer"
+                    data-target="score-9"
+                    data-index="9"
+                  />
+                  <span
+                    id="score-9"
+                    class="text-base font-black text-stone-900 w-12 text-right"
+                    >0/10</span
+                  >
+                </div>
+              </div>
+
+              <!-- 10 -->
+              <div
+                class="flex flex-col md:flex-row md:items-center justify-between gap-6 p-6 bg-stone-50/50 border border-stone-100 rounded-sm"
+              >
+                <div class="max-w-xl">
+                  <span
+                    class="block text-sm font-bold text-stone-900 uppercase tracking-wider mb-1"
+                    >10. Overall Cultural & Cinematic Impact</span
+                  >
+                  <span class="block text-xs text-stone-500"
+                    >Resonance of regional storytelling and lasting emotional
+                    takeaway.</span
+                  >
+                </div>
+                <div
+                  class="flex items-center gap-4 justify-between md:justify-end"
+                >
+                  <input
+                    type="range"
+                    min="0"
+                    max="10"
+                    value="0"
+                    class="score-range accent-stone-900 w-40 sm:w-48 cursor-pointer"
+                    data-target="score-10"
+                    data-index="10"
+                  />
+                  <span
+                    id="score-10"
+                    class="text-base font-black text-stone-900 w-12 text-right"
+                    >0/10</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Bar -->
+            <div
+              class="pt-8 border-t border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-6"
+            >
+              <span
+                id="toast-msg"
+                class="text-xs font-bold uppercase tracking-widest text-green-700 opacity-0 transition-opacity duration-300"
+              >
+                Evaluation Saved Successfully ✓
+              </span>
+
+              <button
+                type="button"
+                id="save-marks-btn"
+                class="w-full sm:w-auto inline-flex justify-center items-center px-10 py-4 bg-stone-900 text-white text-sm font-bold uppercase tracking-widest rounded-sm hover:bg-stone-800 shadow-lg shadow-stone-900/10 transition-all cursor-pointer"
+              >
+                Save Evaluation Score
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script State Management -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const cards = document.querySelectorAll(".film-card");
+      const masterView = document.getElementById("master-view");
+      const detailView = document.getElementById("detail-view");
+      const backToListBtn = document.getElementById("back-to-list-btn");
+
+      const activeTitle = document.getElementById("active-title");
+      const activeDir = document.getElementById("active-dir");
+      const activeRuntime = document.getElementById("active-runtime");
+      const activeSynopsis = document.getElementById("active-synopsis");
+      const activePlayer = document.getElementById(
+        "active-player",
+      ) as HTMLIFrameElement;
+
+      const ranges = document.querySelectorAll(".score-range");
+      const totalScoreEl = document.getElementById("total-score");
+      const saveBtn = document.getElementById("save-marks-btn");
+      const toastMsg = document.getElementById("toast-msg");
+      const progressLabel = document.getElementById("global-progress-label");
+
+      // Memory state for all 4 movies across 10 criteria, initialized to 0
+      const movieState: Record<string, string[]> = {
+        "1": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
+        "2": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
+        "3": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
+        "4": ["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"],
+      };
+
+      const movieStatus: Record<string, boolean> = {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+      };
+
+      let activeMovieId = "1";
+
+      function loadScoresForActiveMovie() {
+        const scores = movieState[activeMovieId];
+        if (!scores) return;
+
+        ranges.forEach((range, idx) => {
+          const r = range as HTMLInputElement;
+          const val = scores[idx];
+          r.value = val;
+          const targetId = r.getAttribute("data-target");
+          const displayEl = document.getElementById(targetId!);
+          if (displayEl) {
+            displayEl.textContent = `${val}/10`;
+          }
+        });
+        calculateTotal();
+      }
+
+      function calculateTotal() {
+        let sum = 0;
+        ranges.forEach((range) => {
+          sum += parseInt((range as HTMLInputElement).value);
+        });
+        if (totalScoreEl) {
+          totalScoreEl.textContent = String(sum);
+        }
+      }
+
+      function updateGlobalProgress() {
+        let evaluatedCount = Object.values(movieStatus).filter(Boolean).length;
+        if (progressLabel) {
+          progressLabel.textContent = `Panel A • ${evaluatedCount} of 4 Evaluated`;
+        }
+      }
+
+      cards.forEach((card) => {
+        card.addEventListener("click", () => {
+          activeMovieId = card.getAttribute("data-id")!;
+          const title = card.getAttribute("data-title");
+          const dir = card.getAttribute("data-dir");
+          const runtime = card.getAttribute("data-runtime");
+          const synopsis = card.getAttribute("data-synopsis");
+          const video = card.getAttribute("data-video");
+
+          if (activeTitle) activeTitle.textContent = title;
+          if (activeDir) activeDir.textContent = `Dir. ${dir} • ${runtime}`;
+          if (activeRuntime) activeRuntime.textContent = runtime;
+          if (activeSynopsis) activeSynopsis.textContent = synopsis;
+          if (activePlayer && video) activePlayer.src = video;
+
+          loadScoresForActiveMovie();
+
+          masterView?.classList.add("hidden");
+          detailView?.classList.remove("hidden");
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      });
+
+      backToListBtn?.addEventListener("click", () => {
+        if (activePlayer) activePlayer.src = "";
+        detailView?.classList.add("hidden");
+        masterView?.classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      ranges.forEach((range) => {
+        range.addEventListener("input", (e) => {
+          const target = e.target as HTMLInputElement;
+          const targetId = target.getAttribute("data-target");
+          const val = target.value;
+          const index = parseInt(target.getAttribute("data-index")!) - 1;
+
+          const displayEl = document.getElementById(targetId!);
+          if (displayEl) {
+            displayEl.textContent = `${val}/10`;
+          }
+
+          if (movieState[activeMovieId]) {
+            movieState[activeMovieId][index] = val;
+          }
+
+          calculateTotal();
+        });
+      });
+
+      saveBtn?.addEventListener("click", () => {
+        saveBtn.innerHTML = "Saving Evaluation...";
+        saveBtn.setAttribute("disabled", "true");
+
+        setTimeout(() => {
+          saveBtn.innerHTML = "Save Evaluation Score";
+          saveBtn.removeAttribute("disabled");
+
+          movieStatus[activeMovieId] = true;
+          updateGlobalProgress();
+
+          const activeCard = document.querySelector(
+            `.film-card[data-id="${activeMovieId}"]`,
+          );
+          if (activeCard) {
+            const badge = activeCard.querySelector(".status-badge");
+            const scoreLabel = activeCard.querySelector(".card-score-label");
+            const currentTotal = totalScoreEl?.textContent || "0";
+
+            if (badge) {
+              badge.textContent = "Evaluated";
+              badge.className =
+                "status-badge inline-block text-[10px] font-bold uppercase tracking-widest bg-green-50 text-green-700 border border-green-200 px-2.5 py-1 rounded-sm";
+            }
+            if (scoreLabel) {
+              scoreLabel.textContent = `Score: ${currentTotal} / 100`;
+              scoreLabel.classList.replace("text-stone-400", "text-stone-900");
+              scoreLabel.classList.add("font-bold");
+            }
+          }
+
+          if (toastMsg) {
+            toastMsg.classList.remove("opacity-0");
+            setTimeout(() => {
+              toastMsg.classList.add("opacity-0");
+            }, 3000);
+          }
+        }, 600);
+      });
+    });
+  </script>
+</BaseLayout>

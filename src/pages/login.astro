@@ -1,0 +1,188 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <!-- Full height split-screen layout minus the header -->
+  <section
+    class="min-h-[calc(100vh-6rem)] flex flex-col md:flex-row bg-[#FAFAFA] antialiased selection:bg-stone-900 selection:text-white"
+  >
+    <!-- Left Side: Cinematic Anchor (Hidden on small mobile for faster access to form) -->
+    <div
+      class="hidden md:flex md:w-1/2 relative bg-stone-950 overflow-hidden items-end p-12 lg:p-24"
+    >
+      <img
+        src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1200&q=80"
+        alt="Film reels"
+        class="absolute inset-0 w-full h-full object-cover grayscale opacity-40 mix-blend-luminosity"
+      />
+      <!-- Subtle internal gradient to ensure text readability -->
+      <div
+        class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/20 to-transparent"
+      >
+      </div>
+
+      <div class="relative z-10 w-full">
+        <div class="mb-4 flex items-center gap-4">
+          <span class="h-px w-8 bg-stone-600"></span>
+          <span
+            class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-400"
+            >Authorized Personnel</span
+          >
+        </div>
+        <h2
+          class="text-4xl lg:text-5xl font-black text-white tracking-tighter uppercase leading-[0.9] mb-4"
+        >
+          Admin & Jury <br />
+          <span class="text-stone-500">Portal</span>
+        </h2>
+        <p class="text-sm text-stone-400 leading-relaxed max-w-sm">
+          Strictly restricted access. This portal is for official jury
+          evaluation and festival administration only.
+        </p>
+      </div>
+    </div>
+
+    <!-- Right Side: Login Form -->
+    <div
+      class="w-full md:w-1/2 flex items-center justify-center p-6 sm:p-12 lg:p-16 xl:p-24 relative"
+    >
+      <!-- Subtle background grid -->
+      <div
+        class="absolute inset-0 bg-[linear-gradient(to_right,#e5e5e5_1px,transparent_1px),linear-gradient(to_bottom,#e5e5e5_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none"
+      >
+      </div>
+
+      <div class="w-full max-w-sm relative z-10">
+        <!-- Mobile Header (Visible only on small screens) -->
+        <div class="md:hidden mb-8 border-b border-stone-200 pb-6">
+          <h1
+            class="text-3xl font-black text-stone-900 tracking-tighter uppercase leading-none mb-2"
+          >
+            Portal <span class="text-stone-400">Login</span>
+          </h1>
+          <p
+            class="text-[10px] font-bold uppercase tracking-widest text-stone-500"
+          >
+            Admin & Jury Access Only
+          </p>
+        </div>
+
+        <div class="hidden md:block mb-8">
+          <h3 class="text-2xl font-serif italic text-stone-900 mb-2">
+            Welcome back
+          </h3>
+          <p class="text-xs text-stone-500 uppercase tracking-widest font-bold">
+            Please authenticate your credentials
+          </p>
+        </div>
+
+        <form id="login-form" class="w-full" onsubmit="event.preventDefault();">
+          <div class="flex flex-col mb-6 group">
+            <label
+              class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500 mb-1.5 group-focus-within:text-stone-900 transition-colors"
+            >
+              Official Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              placeholder="jury@drishtidosham.in"
+              class="bg-transparent border-b border-stone-300 py-2.5 text-stone-900 placeholder-stone-300 focus:outline-none focus:border-stone-900 transition-colors rounded-none"
+              required
+            />
+          </div>
+
+          <div class="flex flex-col mb-8 group">
+            <div class="flex justify-between items-end mb-1.5">
+              <label
+                class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500 group-focus-within:text-stone-900 transition-colors"
+              >
+                Password
+              </label>
+              <!-- Elegant forgot password link -->
+              <a
+                href="#"
+                tabindex="-1"
+                class="text-[9px] font-bold uppercase tracking-widest text-stone-400 hover:text-stone-900 transition-colors"
+              >
+                Forgot?
+              </a>
+            </div>
+            <input
+              type="password"
+              id="password"
+              placeholder="••••••••"
+              class="bg-transparent border-b border-stone-300 py-2.5 text-stone-900 placeholder-stone-300 focus:outline-none focus:border-stone-900 transition-colors rounded-none"
+              required
+            />
+          </div>
+
+          <!-- Pure Typographic Security Notice -->
+          <div class="mb-5 text-center">
+            <p
+              class="text-[9px] font-bold text-stone-400 uppercase tracking-[0.2em]"
+            >
+              Restricted Area • IP Tracking Active
+            </p>
+          </div>
+
+          <button
+            type="submit"
+            id="login-btn"
+            class="w-full inline-flex justify-center items-center px-10 py-3.5 bg-stone-900 text-white text-sm font-bold uppercase tracking-widest rounded-sm hover:bg-stone-800 hover:-translate-y-0.5 shadow-lg shadow-stone-900/10 hover:shadow-xl hover:shadow-stone-900/20 transition-all duration-300 focus:ring-2 focus:ring-offset-2 focus:ring-stone-900"
+          >
+            Authenticate
+          </button>
+        </form>
+
+        <!-- No Signup Notice -->
+        <div class="mt-8 pt-6 border-t border-stone-200 text-center">
+          <p
+            class="text-[10px] uppercase tracking-widest text-stone-500 font-bold"
+          >
+            Not a Jury Member? <br class="md:hidden" />
+            <a
+              href="/register"
+              class="text-stone-900 border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors md:ml-1"
+            >
+              Submit your film
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client-side Logic -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const loginBtn = document.getElementById("login-btn");
+      const loginForm = document.getElementById("login-form");
+
+      if (loginBtn && loginForm) {
+        loginBtn.addEventListener("click", (e) => {
+          // @ts-ignore
+          const email = document.getElementById("email")?.value;
+          // @ts-ignore
+          const password = document.getElementById("password")?.value;
+
+          if (!email || !password) return;
+
+          // Simulate Auth process
+          loginBtn.innerHTML = "Authenticating...";
+          loginBtn.setAttribute("disabled", "true");
+          loginBtn.classList.add("opacity-50", "cursor-not-allowed");
+
+          setTimeout(() => {
+            if (email.includes("admin")) {
+              window.location.href = "/admin-dashboard";
+            } else {
+              window.location.href = "/jury-dashboard";
+            }
+          }, 1200);
+        });
+      }
+    });
+  </script>
+</BaseLayout>

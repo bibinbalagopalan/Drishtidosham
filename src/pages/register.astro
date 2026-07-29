@@ -1,0 +1,637 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+  <section
+    class="bg-[#FAFAFA] min-h-screen pt-12 md:pt-24 pb-32 px-4 sm:px-6 lg:px-8 border-b border-stone-200 antialiased selection:bg-stone-900 selection:text-white"
+  >
+    <div class="max-w-6xl mx-auto">
+      <!-- Header -->
+      <div class="mb-16 md:mb-24">
+        <div class="mb-4 flex items-center gap-4">
+          <span class="h-px w-8 bg-stone-400"></span>
+          <span
+            class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-500"
+            >Call for Entries</span
+          >
+        </div>
+        <h1
+          class="text-4xl sm:text-5xl md:text-7xl font-black text-stone-900 tracking-tighter uppercase leading-[0.9] mb-4"
+        >
+          Official <span class="text-stone-400">Submission</span>
+        </h1>
+        <p class="text-xl md:text-2xl font-serif italic text-stone-600">
+          Season 03 • DrishtiDosham Film Festival
+        </p>
+      </div>
+
+      <!-- Layout Split: Progress Sidebar & Form Area -->
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-24">
+        <!-- Sidebar: Progress Tracker -->
+        <div class="lg:w-1/4 flex-shrink-0">
+          <div class="sticky top-32">
+            <h3
+              class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-400 mb-8 border-b border-stone-200 pb-4"
+            >
+              Submission Progress
+            </h3>
+
+            <!-- Timeline List -->
+            <ul
+              class="relative space-y-8 before:absolute before:inset-0 before:ml-2 before:-translate-x-px md:before:ml-[9px] md:before:-translate-x-px md:before:w-0.5 before:w-0.5 before:h-full before:bg-stone-200"
+              id="progress-tracker"
+            >
+              <li
+                class="step-indicator group relative flex items-start gap-4"
+                data-target="1"
+              >
+                <div
+                  class="indicator-dot w-5 h-5 rounded-full bg-stone-900 border-4 border-[#FAFAFA] z-10 shrink-0 mt-0.5 shadow-sm transition-colors duration-500"
+                >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="text-[9px] font-bold text-stone-500 uppercase tracking-widest mb-1"
+                    >Step 01</span
+                  >
+                  <span
+                    class="text-xs font-bold uppercase tracking-widest text-stone-900 transition-colors duration-500 indicator-text"
+                    >Filmmaker Profile</span
+                  >
+                </div>
+              </li>
+
+              <li
+                class="step-indicator group relative flex items-start gap-4"
+                data-target="2"
+              >
+                <div
+                  class="indicator-dot w-5 h-5 rounded-full bg-stone-200 border-4 border-[#FAFAFA] z-10 shrink-0 mt-0.5 transition-colors duration-500"
+                >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="text-[9px] font-bold text-stone-400 uppercase tracking-widest mb-1 indicator-subtext"
+                    >Step 02</span
+                  >
+                  <span
+                    class="text-xs font-bold uppercase tracking-widest text-stone-400 transition-colors duration-500 indicator-text"
+                    >Film Details</span
+                  >
+                </div>
+              </li>
+
+              <li
+                class="step-indicator group relative flex items-start gap-4"
+                data-target="3"
+              >
+                <div
+                  class="indicator-dot w-5 h-5 rounded-full bg-stone-200 border-4 border-[#FAFAFA] z-10 shrink-0 mt-0.5 transition-colors duration-500"
+                >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="text-[9px] font-bold text-stone-400 uppercase tracking-widest mb-1 indicator-subtext"
+                    >Step 03</span
+                  >
+                  <span
+                    class="text-xs font-bold uppercase tracking-widest text-stone-400 transition-colors duration-500 indicator-text"
+                    >Screener Link</span
+                  >
+                </div>
+              </li>
+
+              <li
+                class="step-indicator group relative flex items-start gap-4"
+                data-target="4"
+              >
+                <div
+                  class="indicator-dot w-5 h-5 rounded-full bg-stone-200 border-4 border-[#FAFAFA] z-10 shrink-0 mt-0.5 transition-colors duration-500"
+                >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="text-[9px] font-bold text-stone-400 uppercase tracking-widest mb-1 indicator-subtext"
+                    >Step 04</span
+                  >
+                  <span
+                    class="text-xs font-bold uppercase tracking-widest text-stone-400 transition-colors duration-500 indicator-text"
+                    >Review & Pay</span
+                  >
+                </div>
+              </li>
+            </ul>
+
+            <div
+              class="mt-16 bg-stone-100/50 p-6 rounded-sm border border-stone-200 hidden lg:block"
+            >
+              <p
+                class="text-[10px] font-bold uppercase tracking-widest text-stone-900 mb-2"
+              >
+                Need Help?
+              </p>
+              <p class="text-[11px] text-stone-500 leading-relaxed mb-4">
+                Ensure your film meets the runtime guidelines (under 30 mins)
+                before proceeding to final payment.
+              </p>
+              <a
+                href="mailto:support@drishtidosham.in"
+                class="text-[10px] font-bold uppercase tracking-widest text-stone-900 border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors"
+                >Contact Support</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Area -->
+        <div class="lg:w-3/4">
+          <form
+            id="submission-form"
+            class="w-full max-w-2xl"
+            onsubmit="event.preventDefault();"
+          >
+            <!-- STEP 1: Filmmaker Profile -->
+            <div class="form-step active" data-step="1">
+              <h2
+                class="text-3xl font-serif italic text-stone-900 mb-8 border-b border-stone-200 pb-4"
+              >
+                Applicant Information
+              </h2>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="flex flex-col group">
+                  <label
+                    class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500 mb-2 group-focus-within:text-stone-900 transition-colors"
+                    >First Name</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Adoor"
+                    class="bg-transparent border-b border-stone-300 py-3 text-stone-900 placeholder-stone-300 focus:outline-none focus:border-stone-900 transition-colors rounded-none"
+                    required
+                  />
+                </div>
+                <div class="flex flex-col group">
+                  <label
+                    class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500 mb-2 group-focus-within:text-stone-900 transition-colors"
+                    >Last Name</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Gopalakrishnan"
+                    class="bg-transparent border-b border-stone-300 py-3 text-stone-900 placeholder-stone-300 focus:outline-none focus:border-stone-900 transition-colors rounded-none"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="flex flex-col mb-8 group">
+                <label
+                  class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500 mb-2 group-focus-within:text-stone-900 transition-colors"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  placeholder="director@example.com"
+                  class="bg-transparent border-b border-stone-300 py-3 text-stone-900 placeholder-stone-300 focus:outline-none focus:border-stone-900 transition-colors rounded-none"
+                  required
+                />
+              </div>
+
+              <div class="flex flex-col mb-12 group">
+                <label
+                  class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500 mb-2 group-focus-within:text-stone-900 transition-colors"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  placeholder="+91 00000 00000"
+                  class="bg-transparent border-b border-stone-300 py-3 text-stone-900 placeholder-stone-300 focus:outline-none focus:border-stone-900 transition-colors rounded-none"
+                  required
+                />
+              </div>
+
+              <div class="flex justify-end border-t border-stone-200 pt-8">
+                <button
+                  type="button"
+                  class="next-btn inline-flex justify-center items-center px-10 py-4 bg-stone-900 text-white text-sm font-bold uppercase tracking-widest rounded-sm hover:bg-stone-800 hover:-translate-y-0.5 shadow-lg shadow-stone-900/10 hover:shadow-xl hover:shadow-stone-900/20 transition-all duration-300"
+                >
+                  Next Step
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 2: Film Details -->
+            <div class="form-step hidden" data-step="2">
+              <h2
+                class="text-3xl font-serif italic text-stone-900 mb-8 border-b border-stone-200 pb-4"
+              >
+                Film Specifications
+              </h2>
+
+              <div class="flex flex-col mb-8 group">
+                <label
+                  class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500 mb-2 group-focus-within:text-stone-900 transition-colors"
+                  >Original Title</label
+                >
+                <input
+                  type="text"
+                  placeholder="Enter film title"
+                  class="bg-transparent border-b border-stone-300 py-3 text-stone-900 placeholder-stone-300 focus:outline-none focus:border-stone-900 transition-colors rounded-none"
+                />
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <div class="flex flex-col group">
+                  <label
+                    class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500 mb-2 group-focus-within:text-stone-900 transition-colors"
+                    >Director's Name</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Name of Director"
+                    class="bg-transparent border-b border-stone-300 py-3 text-stone-900 placeholder-stone-300 focus:outline-none focus:border-stone-900 transition-colors rounded-none"
+                  />
+                </div>
+                <div class="flex flex-col group">
+                  <label
+                    class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500 mb-2 group-focus-within:text-stone-900 transition-colors"
+                    >Runtime (Minutes)</label
+                  >
+                  <input
+                    type="number"
+                    placeholder="e.g. 15"
+                    class="bg-transparent border-b border-stone-300 py-3 text-stone-900 placeholder-stone-300 focus:outline-none focus:border-stone-900 transition-colors rounded-none"
+                  />
+                </div>
+              </div>
+
+              <div class="flex flex-col mb-12 group">
+                <label
+                  class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500 mb-2 group-focus-within:text-stone-900 transition-colors"
+                  >Logline / Short Synopsis</label
+                >
+                <textarea
+                  rows="4"
+                  placeholder="Briefly describe the plot in 2-3 sentences..."
+                  class="bg-transparent border-b border-stone-300 py-3 text-stone-900 placeholder-stone-300 focus:outline-none focus:border-stone-900 transition-colors rounded-none resize-none"
+                ></textarea>
+              </div>
+
+              <div
+                class="flex justify-between items-center border-t border-stone-200 pt-8"
+              >
+                <button
+                  type="button"
+                  class="prev-btn text-xs font-bold uppercase tracking-widest text-stone-500 hover:text-stone-900 transition-colors flex items-center gap-2"
+                >
+                  <span>←</span> Back
+                </button>
+                <button
+                  type="button"
+                  class="next-btn inline-flex justify-center items-center px-10 py-4 bg-stone-900 text-white text-sm font-bold uppercase tracking-widest rounded-sm hover:bg-stone-800 hover:-translate-y-0.5 shadow-lg shadow-stone-900/10 hover:shadow-xl hover:shadow-stone-900/20 transition-all duration-300"
+                >
+                  Next Step
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 3: Screener Link -->
+            <div class="form-step hidden" data-step="3">
+              <h2
+                class="text-3xl font-serif italic text-stone-900 mb-8 border-b border-stone-200 pb-4"
+              >
+                Secure Screener
+              </h2>
+
+              <p class="text-sm text-stone-600 mb-8 leading-relaxed">
+                Please provide a secure link for our jury to review your film.
+                We accept <strong class="text-stone-900 font-bold"
+                  >Unlisted YouTube</strong
+                > links or <strong class="text-stone-900 font-bold"
+                  >Public Google Drive</strong
+                > links. Ensure the link does not expire before the festival dates.
+              </p>
+
+              <!-- Premium Radio Buttons -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                <label
+                  class="relative border border-stone-200 p-6 rounded-sm cursor-pointer hover:border-stone-400 focus-within:border-stone-900 focus-within:ring-1 focus-within:ring-stone-900 transition-all bg-white group flex flex-col items-start"
+                >
+                  <input
+                    type="radio"
+                    name="screener_type"
+                    value="youtube"
+                    class="sr-only peer"
+                    checked
+                  />
+                  <div
+                    class="w-4 h-4 rounded-full border border-stone-300 mb-4 peer-checked:border-stone-900 peer-checked:bg-stone-900 flex items-center justify-center transition-colors"
+                  >
+                    <div
+                      class="w-1.5 h-1.5 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity"
+                    >
+                    </div>
+                  </div>
+                  <span
+                    class="text-xs font-bold uppercase tracking-widest text-stone-900 mb-1"
+                    >YouTube Link</span
+                  >
+                  <span
+                    class="text-[10px] font-medium text-stone-500 uppercase tracking-widest"
+                    >Must be Unlisted</span
+                  >
+                </label>
+
+                <label
+                  class="relative border border-stone-200 p-6 rounded-sm cursor-pointer hover:border-stone-400 focus-within:border-stone-900 focus-within:ring-1 focus-within:ring-stone-900 transition-all bg-white group flex flex-col items-start"
+                >
+                  <input
+                    type="radio"
+                    name="screener_type"
+                    value="drive"
+                    class="sr-only peer"
+                  />
+                  <div
+                    class="w-4 h-4 rounded-full border border-stone-300 mb-4 peer-checked:border-stone-900 peer-checked:bg-stone-900 flex items-center justify-center transition-colors"
+                  >
+                    <div
+                      class="w-1.5 h-1.5 rounded-full bg-white opacity-0 peer-checked:opacity-100 transition-opacity"
+                    >
+                    </div>
+                  </div>
+                  <span
+                    class="text-xs font-bold uppercase tracking-widest text-stone-900 mb-1"
+                    >Google Drive</span
+                  >
+                  <span
+                    class="text-[10px] font-medium text-stone-500 uppercase tracking-widest"
+                    >"View for All" Access</span
+                  >
+                </label>
+              </div>
+
+              <div class="flex flex-col mb-12 group">
+                <label
+                  class="text-[10px] font-bold uppercase tracking-[0.2em] text-stone-500 mb-2 group-focus-within:text-stone-900 transition-colors"
+                  >Video URL</label
+                >
+                <input
+                  type="url"
+                  placeholder="https://..."
+                  class="bg-transparent border-b border-stone-300 py-3 text-stone-900 placeholder-stone-300 focus:outline-none focus:border-stone-900 transition-colors rounded-none"
+                />
+              </div>
+
+              <div
+                class="flex justify-between items-center border-t border-stone-200 pt-8"
+              >
+                <button
+                  type="button"
+                  class="prev-btn text-xs font-bold uppercase tracking-widest text-stone-500 hover:text-stone-900 transition-colors flex items-center gap-2"
+                >
+                  <span>←</span> Back
+                </button>
+                <button
+                  type="button"
+                  class="next-btn inline-flex justify-center items-center px-10 py-4 bg-stone-900 text-white text-sm font-bold uppercase tracking-widest rounded-sm hover:bg-stone-800 hover:-translate-y-0.5 shadow-lg shadow-stone-900/10 hover:shadow-xl hover:shadow-stone-900/20 transition-all duration-300"
+                >
+                  Next Step
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 4: Payment & Review -->
+            <div class="form-step hidden" data-step="4">
+              <h2
+                class="text-3xl font-serif italic text-stone-900 mb-8 border-b border-stone-200 pb-4"
+              >
+                Finalize Submission
+              </h2>
+
+              <!-- Official Receipt Look -->
+              <div
+                class="bg-white border border-stone-200 p-8 md:p-10 rounded-sm mb-10 shadow-sm relative overflow-hidden"
+              >
+                <div class="absolute top-0 left-0 w-1 h-full bg-stone-900">
+                </div>
+                <div
+                  class="flex flex-col md:flex-row justify-between md:items-end border-b border-stone-100 pb-6 mb-6 gap-4"
+                >
+                  <div class="flex flex-col">
+                    <span
+                      class="text-[10px] font-bold uppercase tracking-[0.3em] text-stone-400 mb-2"
+                      >Submission Tier</span
+                    >
+                    <span
+                      class="text-sm font-bold text-stone-900 uppercase tracking-widest"
+                      >Standard Official Entry</span
+                    >
+                  </div>
+                  <span
+                    class="text-4xl font-serif italic text-stone-900 leading-none"
+                    >₹750</span
+                  >
+                </div>
+                <ul
+                  class="text-xs font-medium text-stone-500 space-y-3 uppercase tracking-widest"
+                >
+                  <li class="flex items-center gap-3">
+                    <span class="w-1 h-1 bg-stone-400 rounded-full"></span> Non-refundable
+                    processing fee
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span class="w-1 h-1 bg-stone-400 rounded-full"></span> Secure
+                    online transaction
+                  </li>
+                  <li class="flex items-center gap-3">
+                    <span class="w-1 h-1 bg-stone-400 rounded-full"></span> Official
+                    jury consideration
+                  </li>
+                </ul>
+              </div>
+
+              <div class="flex items-start gap-4 mb-12 group cursor-pointer">
+                <input
+                  type="checkbox"
+                  id="terms"
+                  class="mt-1 w-4 h-4 border-stone-300 text-stone-900 focus:ring-stone-900 rounded-sm cursor-pointer"
+                />
+                <label
+                  for="terms"
+                  class="text-xs text-stone-600 leading-relaxed cursor-pointer select-none"
+                >
+                  I confirm that I hold all necessary rights to the submitted
+                  material and agree to the <a
+                    href="/terms"
+                    class="text-stone-900 font-bold border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors"
+                    >Terms & Conditions</a
+                  > of DrishtiDosham Film Festival.
+                </label>
+              </div>
+
+              <div
+                class="flex justify-between items-center border-t border-stone-200 pt-8"
+              >
+                <button
+                  type="button"
+                  class="prev-btn text-xs font-bold uppercase tracking-widest text-stone-500 hover:text-stone-900 transition-colors flex items-center gap-2"
+                >
+                  <span>←</span> Back
+                </button>
+                <button
+                  type="button"
+                  id="submit-btn"
+                  class="inline-flex justify-center items-center px-10 py-4 bg-stone-900 text-white text-sm font-bold uppercase tracking-widest rounded-sm hover:bg-stone-800 hover:-translate-y-0.5 shadow-lg shadow-stone-900/20 hover:shadow-xl hover:shadow-stone-900/30 transition-all duration-300"
+                >
+                  Pay ₹750 & Submit
+                </button>
+              </div>
+            </div>
+
+            <!-- STEP 5: Success / Confirmation -->
+            <div class="form-step hidden text-center py-16" data-step="5">
+              <div
+                class="w-16 h-16 bg-stone-900 rounded-full flex items-center justify-center mx-auto mb-8 shadow-xl shadow-stone-900/20"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  stroke-width="2.5"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4.5 12.75l6 6 9-13.5"></path>
+                </svg>
+              </div>
+
+              <h2
+                class="text-3xl md:text-5xl font-black text-stone-900 tracking-tighter uppercase mb-6"
+              >
+                Submission <span class="text-stone-400">Received</span>
+              </h2>
+
+              <div class="max-w-md mx-auto mb-12">
+                <p class="text-lg font-serif italic text-stone-600 mb-2">
+                  Your cinematic journey is now in the hands of our jury.
+                </p>
+                <p
+                  class="text-xs text-stone-500 uppercase tracking-widest mt-6"
+                >
+                  A confirmation email has been sent to your registered address.
+                </p>
+              </div>
+
+              <div
+                class="flex justify-center pt-8 border-t border-stone-200 w-full max-w-sm mx-auto"
+              >
+                <a
+                  href="/"
+                  class="text-xs font-bold uppercase tracking-widest text-stone-900 border-b border-stone-900 hover:text-stone-500 hover:border-stone-500 transition-colors"
+                >
+                  Return to Homepage
+                </a>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Client-side Logic for Multi-step Form -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const steps = document.querySelectorAll(".form-step");
+      const nextBtns = document.querySelectorAll(".next-btn");
+      const prevBtns = document.querySelectorAll(".prev-btn");
+      const indicators = document.querySelectorAll(".step-indicator");
+      const submitBtn = document.getElementById("submit-btn");
+
+      let currentStep = 0;
+
+      function updateForm() {
+        // Hide/Show correct step
+        steps.forEach((step, index) => {
+          step.classList.toggle("hidden", index !== currentStep);
+          step.classList.toggle("block", index === currentStep);
+        });
+
+        // Update Sidebar Indicators
+        indicators.forEach((indicator, index) => {
+          const dot = indicator.querySelector(".indicator-dot");
+          const text = indicator.querySelector(".indicator-text");
+          const subtext = indicator.querySelector(".indicator-subtext");
+
+          if (index === currentStep) {
+            // Active Step
+            dot?.classList.replace("bg-stone-200", "bg-stone-900");
+            text?.classList.replace("text-stone-400", "text-stone-900");
+            subtext?.classList.replace("text-stone-400", "text-stone-500");
+          } else if (index < currentStep) {
+            // Completed Steps
+            dot?.classList.replace("bg-stone-200", "bg-stone-900");
+            text?.classList.replace("text-stone-900", "text-stone-400");
+            subtext?.classList.replace("text-stone-500", "text-stone-400");
+          } else {
+            // Future Steps
+            dot?.classList.replace("bg-stone-900", "bg-stone-200");
+            text?.classList.replace("text-stone-900", "text-stone-400");
+            subtext?.classList.replace("text-stone-500", "text-stone-400");
+          }
+        });
+
+        // Scroll to top of form smoothly on mobile
+        if (window.innerWidth < 1024 && currentStep > 0) {
+          document
+            .getElementById("submission-form")
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }
+
+      nextBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (currentStep < steps.length - 2) {
+            currentStep++;
+            updateForm();
+          }
+        });
+      });
+
+      prevBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          if (currentStep > 0) {
+            currentStep--;
+            updateForm();
+          }
+        });
+      });
+
+      // Mock Payment Submission
+      if (submitBtn) {
+        submitBtn.addEventListener("click", () => {
+          const terms = document.getElementById("terms");
+          // @ts-ignore
+          if (!terms?.checked) {
+            alert("Please agree to the Terms & Conditions to proceed.");
+            return;
+          }
+
+          // Simulate Payment processing delay
+          submitBtn.innerHTML = "Processing...";
+          submitBtn.setAttribute("disabled", "true");
+          submitBtn.classList.add("opacity-50", "cursor-not-allowed");
+
+          setTimeout(() => {
+            currentStep = 4; // Show success state
+            updateForm();
+          }, 1500);
+        });
+      }
+    });
+  </script>
+</BaseLayout>
